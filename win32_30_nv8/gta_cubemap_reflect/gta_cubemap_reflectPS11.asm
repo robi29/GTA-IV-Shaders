@@ -322,5 +322,7 @@
     texkill r1
     mov oC0, r0
 
+    mov oC0.xyzw, c4.y
+
 // approximately 206 instruction slots used (16 texture, 190 arithmetic)
  

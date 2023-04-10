@@ -173,6 +173,7 @@
     add r4.xy, -r4, c1.w
     mov r4.zw, c2.w
     texldl r4, r4, s4
+    mov r4, c2.z
     mul_sat r1.x, r5.z, c3.x
     mul r4.xyz, r4, r1.x
     mul r4.xyz, r1.z, r4

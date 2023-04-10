@@ -123,6 +123,10 @@
     add r4.xy, -r4, c1.z
     mov r4.zw, c2.w
     texldl r4, r4, s4
+    //mov r4, c2.z
+
+    mov oC0.xyzw, r4
+/*
     mul_sat r1.x, r5.z, c3.x
     mul r4.xyz, r4, r1.x
     mul r4.xyz, r1.z, r4
@@ -295,6 +299,6 @@
     mad r1.xyz, r1.x, r1.yzww, c43
     mad r1.xyz, r2, -r2.w, r1
     mad oC0.xyz, r0.w, r1, r0
-
+*/
 // approximately 215 instruction slots used (17 texture, 198 arithmetic)
  

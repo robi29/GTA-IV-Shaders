@@ -92,9 +92,12 @@
     dp3 r0.w, r1, r1
     add r1.xyz, r1, c0.w
     nrm r2.xyz, r1
-    mad r1.xy, r0.w, -c1, c1.w
+    mad r1.xy, r0.w, -c1, c1.z
+    mul r6.x, r0.w, -c1
     max r0.w, r1.x, c1.w
+    max r7.x, r6.x, c1.w
     mul r0.z, r0.w, v2.z
+    mul r8.x, r7.x, v2.z
     dp3 r1.x, c14, r0
     add r3.xyz, -r0, c15
     dp3 r0.x, r3, r3
@@ -109,7 +112,7 @@
     dp4 r5.y, r3, c56
     mul r3.xyz, c61.xyww, v2.y
     mad r3.xyz, v2.x, c60.xyww, r3
-    mad r3.xyz, r0.z, c62.xyww, r3
+    mad r3.xyz, r8.x, c62.xyww, r3
     add r3.xyz, r3, c63.xyww
     mad r0.yz, r3.xxyw, r4.xxyw, r5.xxyw
     mov r3.y, c53.y

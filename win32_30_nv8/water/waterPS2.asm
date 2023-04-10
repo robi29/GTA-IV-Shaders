@@ -92,7 +92,7 @@
     dp3 r0.w, r1, r1
     add r1.xyz, r1, c0.w
     nrm r2.xyz, r1
-    mad r1.xy, r0.w, -c1, c1.z
+    mad r1.xy, r0.w, -c1, c1.w
     max r0.w, r1.x, c1.w
     mul r0.z, r0.w, v2.z
     dp3 r1.x, c14, r0
@@ -180,7 +180,7 @@
     mul r0.x, r0.x, c8.w
     mad r0.x, r0.y, c9.x, r0.x
     add r0.y, r1.z, r0.x
-    cmp_sat r0.x, r0.y, r0.x, r1.x
+    cmp_sat r0.x, r0.y, r0.x, r1.x // shadows
     mul r0.yz, c0.y, v2.xxyw
     texld r3, r0.yzzw, s0
     add r3, r3.zwzw, c3.x
@@ -233,7 +233,7 @@
     mul r5.xyz, r0.w, r5
     mul r5.xyz, r0.x, r5
     mul r6.xyz, r0.x, r6
-    mul r6.xyz, r6, c17.w
+    mul r6.xyz, r6, c17.w // specular
     rcp r0.x, c66.y
     mov r7.y, -r0.x
     rcp r7.xz, c66.x

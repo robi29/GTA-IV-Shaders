@@ -1,0 +1,2630 @@
+<?xml version="1.0" encoding="UTF - 8"?>
+<Magic value="1635280754" />
+<Game>GTAIV</Game>
+<Platform>PC</Platform>
+<Effect>
+	<Shaders>
+		<VertexShaders value="3" >
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_raindrops\gta_rmptfx_raindropsVS0.asm</File>
+				<Variables value="10" >
+					<Item>
+						<Type>float</Type>
+						<Name>gAmbientAmount</Name>
+						<Index value="64" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gAspectRatio</Name>
+						<Index value="47" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gDepthFxParams</Name>
+						<Index value="16" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gLightAmbient0</Name>
+						<Index value="37" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gLightAmbient1</Name>
+						<Index value="38" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gSuperAlpha</Name>
+						<Index value="65" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogColor</Name>
+						<Index value="42" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogColorN</Name>
+						<Index value="43" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogParams</Name>
+						<Index value="41" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_raindrops\gta_rmptfx_raindropsVS1.asm</File>
+				<Variables value="7" >
+					<Item>
+						<Type>float4</Type>
+						<Name>gAspectRatio</Name>
+						<Index value="47" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gDepthFxParams</Name>
+						<Index value="16" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gSuperAlpha</Name>
+						<Index value="64" />
+					</Item>
+					<Item>
+						<Type>float4x4</Type>
+						<Name>gWorldViewProj</Name>
+						<Index value="8" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogColor</Name>
+						<Index value="42" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogColorN</Name>
+						<Index value="43" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogParams</Name>
+						<Index value="41" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_raindrops\gta_rmptfx_raindropsVS2.asm</File>
+				<Variables value="6" >
+					<Item>
+						<Type>float4</Type>
+						<Name>gDepthFxParams</Name>
+						<Index value="16" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gSuperAlpha</Name>
+						<Index value="64" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogColor</Name>
+						<Index value="42" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogColorN</Name>
+						<Index value="43" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalFogParams</Name>
+						<Index value="41" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
+					</Item>
+				</Variables>
+			</Item>
+		</VertexShaders>
+		<PixelShaders value="3" >
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_raindrops\gta_rmptfx_raindropsPS1.asm</File>
+				<Variables value="2" >
+					<Item>
+						<Type>sampler</Type>
+						<Name>DiffuseTexSampler</Name>
+						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>HybridAdd</Name>
+						<Index value="66" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_raindrops\gta_rmptfx_raindropsPS2.asm</File>
+				<Variables value="14" >
+					<Item>
+						<Type>sampler</Type>
+						<Name>DiffuseTexSampler</Name>
+						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>sampler</Type>
+						<Name>FrameMapTexSampler</Name>
+						<Index value="1" />
+					</Item>
+					<Item>
+						<Type>sampler</Type>
+						<Name>NormalMapTexSampler</Name>
+						<Index value="2" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>SpecularPower</Name>
+						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gBlurAmount</Name>
+						<Index value="74" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gDiffuse</Name>
+						<Index value="73" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gDirectionalColour</Name>
+						<Index value="18" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gDirectionalLight</Name>
+						<Index value="17" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gLightIntensityClamp</Name>
+						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gNormalArc</Name>
+						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gNormalHeight</Name>
+						<Index value="76" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gRefraction</Name>
+						<Index value="75" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gShadowAmount</Name>
+						<Index value="78" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_raindrops\gta_rmptfx_raindropsPS3.asm</File>
+				<Variables value="7" >
+					<Item>
+						<Type>sampler</Type>
+						<Name>DiffuseTexSampler</Name>
+						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>sampler</Type>
+						<Name>FrameMapTexSampler</Name>
+						<Index value="1" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gBlurAmount</Name>
+						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float2</Type>
+						<Name>gHeatHazeRippleLength</Name>
+						<Index value="74" />
+					</Item>
+					<Item>
+						<Type>float2</Type>
+						<Name>gHeatHazeRippleRate</Name>
+						<Index value="73" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gRefraction</Name>
+						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
+					</Item>
+				</Variables>
+			</Item>
+		</PixelShaders>
+	</Shaders>
+	<GlobalVariables value="61" >
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="64" />
+			<Name1>gAllGlobals</Name1>
+			<Name2>AllGlobals</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4x4</Type>
+			<ArrayCount value="0" />
+			<Name1>gWorld</Name1>
+			<Name2>World</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4x4</Type>
+			<ArrayCount value="0" />
+			<Name1>gWorldView</Name1>
+			<Name2>WorldView</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4x4</Type>
+			<ArrayCount value="0" />
+			<Name1>gWorldViewProj</Name1>
+			<Name2>WorldViewProjection</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4x4</Type>
+			<ArrayCount value="0" />
+			<Name1>gViewInverse</Name1>
+			<Name2>ViewInverse</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>StippleTexture</Name1>
+			<Name2>stippletexture</Name2>
+			<Annotation />
+			<Values value="10" >
+			MinFilter Point
+			MagFilter Point
+			MipFilter Point
+			AddressU Wrap
+			AddressV Wrap
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gDepthFxParams</Name1>
+			<Name2>DepthFxParams</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gDirectionalLight</Name1>
+			<Name2>DirectionalLight</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gDirectionalColour</Name1>
+			<Name2>DirectionalColour</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPosX</Name1>
+			<Name2>LightPositionX</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPosY</Name1>
+			<Name2>LightPositionY</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPosZ</Name1>
+			<Name2>LightPositionZ</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightDirX</Name1>
+			<Name2>LightDirX</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightDirY</Name1>
+			<Name2>LightDirY</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightDirZ</Name1>
+			<Name2>LightDirZ</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightFallOff</Name1>
+			<Name2>LightFallOff</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightConeScale</Name1>
+			<Name2>LightConeScale</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightConeOffset</Name1>
+			<Name2>LightConeOffset</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightColR</Name1>
+			<Name2>LightColR</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightColG</Name1>
+			<Name2>LightColG</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightColB</Name1>
+			<Name2>LightColB</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointPosX</Name1>
+			<Name2>LightPointPositionX</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointPosY</Name1>
+			<Name2>LightPointPositionY</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointPosZ</Name1>
+			<Name2>LightPointPositionZ</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointColR</Name1>
+			<Name2>LightPointColR</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointColG</Name1>
+			<Name2>LightPointColG</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointColB</Name1>
+			<Name2>LightPointColB</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightPointFallOff</Name1>
+			<Name2>LightPointFallOff</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightDir2X</Name1>
+			<Name2>LightDir2X</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightDir2Y</Name1>
+			<Name2>LightDir2Y</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightDir2Z</Name1>
+			<Name2>LightDir2Z</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightConeScale2</Name1>
+			<Name2>LightConeScale2</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightConeOffset2</Name1>
+			<Name2>LightConeOffset2</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightAmbient0</Name1>
+			<Name2>LightAmbientColor0</Name2>
+			<Annotation value="2" >
+				<Item>
+					<Name>UIWidget</Name>
+					<Type>String</Type>
+					<Value>Ambient Light Color 0</Value>
+				</Item>
+				<Item>
+					<Name>Space</Name>
+					<Type>String</Type>
+					<Value>material</Value>
+				</Item>
+			</Annotation>
+			<Values value="4" >
+			0
+			0
+			0
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gLightAmbient1</Name1>
+			<Name2>LightAmbientColor1</Name2>
+			<Annotation value="2" >
+				<Item>
+					<Name>UIWidget</Name>
+					<Type>String</Type>
+					<Value>Ambient Light Color 1</Value>
+				</Item>
+				<Item>
+					<Name>Space</Name>
+					<Type>String</Type>
+					<Value>material</Value>
+				</Item>
+			</Annotation>
+			<Values value="4" >
+			0
+			0
+			0
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>globalScalars</Name1>
+			<Name2>globalScalars</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>globalScalars2</Name1>
+			<Name2>globalScalars2</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gAspectRatio</Name1>
+			<Name2>gAspectRatio</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>globalScreenSize</Name1>
+			<Name2>globalScreenSize</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>globalFogParams</Name1>
+			<Name2>globalFogParams</Name2>
+			<Annotation />
+			<Values value="4" >
+			1600
+			9e+06
+			0.01
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>globalFogColor</Name1>
+			<Name2>globalFogColor</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>globalFogColorN</Name1>
+			<Name2>globalFogColorN</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gDayNightEffects</Name1>
+			<Name2>globalDayNightEffects</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			0
+			1
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>gInvColorExpBias</Name1>
+			<Name2>ColorExpBias</Name2>
+			<Annotation />
+			<Values value="1" >
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>colorize</Name1>
+			<Name2>Colorize</Name2>
+			<Annotation />
+			<Values value="4" >
+			1
+			1
+			1
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>stencil</Name1>
+			<Name2>Stencil</Name2>
+			<Annotation />
+			<Values value="4" >
+			0
+			255
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gFacetCentre</Name1>
+			<Name2>FacetCentre</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowCommonParam0123</Name1>
+			<Name2>ShadowCommonParam0123</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowParam14151617</Name1>
+			<Name2>ShadowParam14151617</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowParam18192021</Name1>
+			<Name2>ShadowParam18192021</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowParam0123</Name1>
+			<Name2>ShadowParam0123</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowParam4567</Name1>
+			<Name2>ShadowParam4567</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowParam891113</Name1>
+			<Name2>ShadowParam891113</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4x4</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowMatrix</Name1>
+			<Name2>ShadowMatrix</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowZSamplerDir</Name1>
+			<Name2>ShadowZTextureDir</Name2>
+			<Annotation />
+			<Values value="10" >
+			AddressU Clamp
+			AddressV Clamp
+			MipFilter Point
+			MinFilter Point
+			MagFilter Point
+			</Values>
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowZSamplerDirVS</Name1>
+			<Name2>ShadowZTextureDirVS</Name2>
+			<Annotation />
+			<Values value="10" >
+			AddressU Clamp
+			AddressV Clamp
+			MipFilter Point
+			MinFilter Point
+			MagFilter Point
+			</Values>
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowZSamplerCache</Name1>
+			<Name2>ShadowZTextureCache</Name2>
+			<Annotation />
+			<Values value="10" >
+			AddressU Clamp
+			AddressV Clamp
+			MipFilter Point
+			MinFilter Point
+			MagFilter Point
+			</Values>
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>gShadowSamplerLUT</Name1>
+			<Name2>ShadowTextureLUT</Name2>
+			<Annotation />
+			<Values value="10" >
+			AddressU Wrap
+			AddressV Wrap
+			MipFilter Point
+			MinFilter Linear
+			MagFilter Linear
+			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>gInvScreenSize</Name1>
+			<Name2>InvScreenSize</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>DepthMapTexSampler</Name1>
+			<Name2>DepthMap</Name2>
+			<Annotation />
+			<Values value="10" >
+			MinFilter Point
+			MagFilter Point
+			MipFilter None
+			AddressU Clamp
+			AddressV Clamp
+			</Values>
+		</Item>
+	</GlobalVariables>
+	<LocalVariables value="22" >
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>shadowmap_res</Name1>
+			<Name2>ShadowMapResolution</Name2>
+			<Annotation />
+			<Values value="1" >
+			1280
+			</Values>
+		</Item>
+		<Item>
+			<Type>float2</Type>
+			<ArrayCount value="4" />
+			<Name1>facetMask</Name1>
+			<Name2>facetMask</Name2>
+			<Annotation />
+			<Values value="8" >
+			-1
+			0
+			1
+			0
+			0
+			-1
+			0
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>gSoftness</Name1>
+			<Name2>gSoftness</Name2>
+			<Annotation value="4" >
+				<Item>
+					<Name>UIName</Name>
+					<Type>String</Type>
+					<Value>Softness Fade : Controls how much soft particles fade out as objects become close to them ;</Value>
+				</Item>
+				<Item>
+					<Name>UIMin</Name>
+					<Type>Float</Type>
+					<Value value="0.000000" />
+				</Item>
+				<Item>
+					<Name>UIMax</Name>
+					<Type>Float</Type>
+					<Value value="1000.000000" />
+				</Item>
+				<Item>
+					<Name>UIStep</Name>
+					<Type>Float</Type>
+					<Value value="0.010000" />
+				</Item>
+			</Annotation>
+			<Values value="1" >
+			2
+			</Values>
+		</Item>
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>HybridAdd</Name1>
+			<Name2>HybridAdd</Name2>
+			<Annotation />
+			<Values value="1" >
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>DiffuseTexSampler</Name1>
+			<Name2>DiffuseTex2</Name2>
+			<Annotation value="1" >
+				<Item>
+					<Name>UIName</Name>
+					<Type>String</Type>
+					<Value>Texture Map</Value>
+				</Item>
+			</Annotation>
+			<Values value="10" >
+			MinFilter Anisotropic
+			MagFilter Linear
+			MipFilter Linear
+			AddressU Clamp
+			AddressV Clamp
+			</Values>
+		</Item>
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>HybridAddRatio</Name1>
+			<Name2>HybridAddRatio</Name2>
+			<Annotation value="5" >
+				<Item>
+					<Name>UIName</Name>
+					<Type>String</Type>
+					<Value>Hybrid Add Ratio</Value>
+				</Item>
+				<Item>
+					<Name>UIMin</Name>
+					<Type>Float</Type>
+					<Value value="0.000000" />
+				</Item>
+				<Item>
+					<Name>UIMax</Name>
+					<Type>Float</Type>
+					<Value value="1.000000" />
+				</Item>
+				<Item>
+					<Name>UIStep</Name>
+					<Type>Float</Type>
+					<Value value="0.010000" />
+				</Item>
+				<Item>
+					<Name>UIHint</Name>
+					<Type>String</Type>
+					<Value>Keyframeable</Value>
+				</Item>
+			</Annotation>
+			<Values value="1" >
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>HDRIntensityMultiplier</Name1>
+			<Name2>HDRIntensityMultiplier</Name2>
+			<Annotation value="5" >
+				<Item>
+					<Name>UIName</Name>
+					<Type>String</Type>
+					<Value>HDR Intensity Multiplier</Value>
+				</Item>
+				<Item>
+					<Name>UIMin</Name>
+					<Type>Float</Type>
+					<Value value="0.000000" />
+				</Item>
+				<Item>
+					<Name>UIMax</Name>
+					<Type>Float</Type>
+					<Value value="255.000000" />
+				</Item>
+				<Item>
+					<Name>UIStep</Name>
+					<Type>Float</Type>
+					<Value value="0.010000" />
+				</Item>
+				<Item>
+					<Name>UIHint</Name>
+					<Type>String</Type>
+					<Value>Keyframeable</Value>
+				</Item>
+			</Annotation>
+			<Values value="1" >
+			1
+			</Values>
+		</Item>
+		<Item>
+			<Type>float3</Type>
+			<ArrayCount value="0" />
+			<Name1>LuminanceConstants</Name1>
+			<Name2>LuminanceConstants</Name2>
+			<Annotation />
+			<Values value="3" >
+			0.2125
+			0.7154
+			0.0721
+			</Values>
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>FrameMapTexSampler</Name1>
+			<Name2>FrameMap</Name2>
+			<Annotation />
+			<Values value="10" >
+			MinFilter Linear
+			MagFilter Linear
+			MipFilter None
+			AddressU Clamp
+			AddressV Clamp
+			</Values>
+		</Item>
+		<Item>
+			<Type>sampler</Type>
+			<ArrayCount value="0" />
+			<Name1>NormalMapTexSampler</Name1>
+			<Name2>NormalMapTex</Name2>
+			<Annotation value="1" >
+				<Item>
+					<Name>UIName</Name>
+					<Type>String</Type>
+					<Value>Normal Map</Value>
+				</Item>
+			</Annotation>
+			<Values value="10" >
+			MinFilter Linear
+			MagFilter Linear
+			MipFilter None
+			AddressU Clamp
+			AddressV Clamp
+			</Values>
+		</Item>
+		<Item>
+			<Type>float</Type>
+			<ArrayCount value="0" />
+			<Name1>gNormalArc</Name1>
+			<Name2>NormalArc</Name2>
+			<Annotation value="4" >
+				<Item>
+					<Name>UIName</Name>
+					<Type>String</Type>
+					<Value></Value>
+				</Item>
+				<Item>
+					<Name>ormal Arc : Determines how much to bend normals outwards for vertex lighting  </Name>
+				</Item>
+				<Item>
+					<Name>0 - bend completely outwards, 4 </Name>
+				</Item>
+				<Item>
+					<Name>nd nearly ompletely inwards) UIMinUIMax€?UIStep
+×#<€?gLightIntensityClampLigh</Name>
+				</Item>
+			</Annotation>
+			<Values value="73" >
+			1.77532e+28
+			7.93162e+34
+			4.36031e+27
+			9.9307e-35
+			2.37832e+20
+			9.43306e-38
+			2.72392e+20
+			5.08452e+31
+			3.10251e+27
+			8.13681e+32
+			7.24362e+22
+			1.18339e+22
+			4.7627e+30
+			4.52669e+21
+			2.61859e+20
+			6.67408e+22
+			872544
+			1.01397e-38
+			1.4013e-45
+			872544
+			1.10552e-38
+			-1.4013e-45
+			872564
+			2.84051e+29
+			-1.51737e+14
+			1.13408e-40
+			1.40692e-37
+			924.141
+			2.92067e+32
+			3.86379e-34
+			2.72022e+23
+			9.3168e-39
+			872560
+			7.00622e+22
+			932.031
+			2.92067e+32
+			0.000611863
+			1.8512e+28
+			1.1579e+27
+			4.61142e+24
+			4.35458e+27
+			7.55706e+31
+			1.95185e-19
+			4.37125e+24
+			1.12587e+24
+			2.01962e-19
+			2.86245e+23
+			3.2598e-12
+			1.15761e+27
+			1.84983e+20
+			2.02823e-19
+			7.55631e+31
+			1.87323e+31
+			1.75637e+25
+			1.42409e-19
+			1.46643e-19
+			7.75817e+26
+			7.36518e+31
+			1.00684e-11
+			1.10231e+24
+			3.80701e-39
+			2.11112e+08
+			2.35891e-38
+			0
+			2.11112e+08
+			2.35963e-38
+			2
+			8.64715e+11
+			1.0322e-38
+			2.33146e-17
+			4.4281e-43
+			2.06451e-40
+			3.74095e+27
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="105" />
+			<Name1>ntAmountAmbientAmountUINameNAmbient Scale : Controls how much double ambient lighting  to alpy</Name1>
+			<Name2>to surfaceUIMinUIMax</Name2>
+			<Annotation />
+			<Values />
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>IStep
+×#<€?gSuperAlphaSuperAlphaUIName`Super Alpha : Boosts the alpha </Name1>
+			<Name2>mount by the given value ( 1 - normal alpha,  2 - super alpha) UIMinUIMax€@UIStep</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name>@gBlurAmountgBlurAmountUIName
+Blur RageUIMin</Name>
+					<Type>Int</Type>
+					<Value value="1" />
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name>IMaxÈBUIStep
+×#<gRefractiongRefractionUINameIntensify Normal M</Name>
+				</Item>
+				<Item>
+					<Name>UIMinzÄUIMaxúDUIStep
+×#<ö(„@gNormalHeightgNormalHeightUIName Scale Z Component of Norma</Name>
+				</Item>
+				<Item>
+					<Name>MapUIMinzÄUIMaxúDUIS</Name>
+				</Item>
+				<Item>
+					<Name>p
+×#<SpecularPowerSpecularPowerUINameSpecular FalloffUIMinzÄUIMaxúDUISt</Name>
+				</Item>
+				<Item>
+					<Name>
+×#<×£AgShadowAmountgShadowAmountUINameShadow ScalarUIMinúÄUIMaxúDUIStep
+×#<</Name>
+				</Item>
+				<Item>
+					<Name>HeatHazeRippleRategHeatHazeRippleRateUINameHeatHazeFactorUIMinzÄUIMaxúDUIStep
+×#<</Name>
+					<Type>Float</Type>
+					<Value value="5.000000" />
+				</Item>
+				<Item>
+					<Name>g</Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			2.31108e+20
+			1.58971e+25
+			6.97845e+22
+			1.12579e+24
+			1.03727e-25
+			2.64345e+20
+			2.92434e+35
+			2.88838e+29
+			6.0142e+07
+			7.33435e+31
+			9.9307e-35
+			2.37832e+20
+			9.43306e-38
+			2.64344e+20
+			2.6784e+20
+			2.28735e+20
+			4.74289e+30
+			872544
+			1.01397e-38
+			1.66154e+35
+			872556
+			1.10552e-38
+			-1.66154e+35
+			872564
+			2.84051e+29
+			-1.51737e+14
+			1.13408e-40
+			2.25107e-36
+			2.79457e+20
+			9.20023e-41
+			1.04778e+22
+			1.78257e+19
+			1.8057e+28
+			2.96421e+29
+			9.40424e-38
+			4.51709e+30
+			4.22116e+24
+			4.61622e+24
+			9.31929e-39
+			2.75867e-40
+			1.15311e+27
+			1.6488e+22
+			1.09634e-38
+			9.25544e-41
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+		<Item>
+			<Type></Type>
+			<ArrayCount value="7" />
+			<Name1>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name1>
+			<Name2>@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</Name2>
+			<Annotation value="10" >
+				<Item>
+					<Name>PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP</Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+				<Item>
+					<Name></Name>
+				</Item>
+			</Annotation>
+			<Values value="101" >
+			-3.55251e-15
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			0
+			</Values>
+		</Item>
+	</LocalVariables>
+	<Techniques />
+</Effect>

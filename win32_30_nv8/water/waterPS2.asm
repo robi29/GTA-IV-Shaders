@@ -64,7 +64,7 @@
     def c3, -0.5, 0.5, 1, 0.25
     def c4, 0.116363637, 0.465454549, 1.125, 0.0199999996
     def c5, 0.0500000007, 9.99999975e-006, 1.00001001, 0.0299999993
-    def c6, 1, -1, 0.00499999989, 1.33333337
+    def c6, 1, -1, 0.00499999989, 0.9
     def c7, -500, 0.25, 1000, 0.5
     def c8, 9.99999975e-005, -511, 512.000122, 1.5
     def c9, 0.0833333358, 9, 10, 3
@@ -223,7 +223,6 @@
     add r0.w, r0.w, r0.w
     mad r5.xyz, r1.xyww, -r0.w, r2
     dp3 r0.w, r1.xyww, -c17
-    add r0.w, r0.w, -c3.w
     mul_sat r0.w, r0.w, c6.w
     dp3_sat r1.x, -c17, r5
     add r1.x, r1.x, c8.x
@@ -320,5 +319,5 @@
     lrp r2.xyz, r0.z, r1, r0.xyww
     mul oC0.xyz, r2, c39.y
 
-// approximately 243 instruction slots used (19 texture, 224 arithmetic)
+// approximately 242 instruction slots used (19 texture, 223 arithmetic)
  

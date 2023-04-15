@@ -180,7 +180,7 @@
     add r0.x, r0.x, -c53.w
     cmp r1.xz, r0.x, c12.xyyw, c12.zyww
     mul r0.x, r0.z, r0.z
-    mul r0.x, r0.x, c8.w
+    mul r0.x, r0.x, r0.x
     mad r0.x, r0.y, c9.x, r0.x
     add r0.y, r1.z, r0.x
     cmp_sat r0.x, r0.y, r0.x, r1.x // shadows

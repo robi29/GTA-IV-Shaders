@@ -199,7 +199,7 @@
     rcp r3.w, c53.w
     mul r3.w, r1.w, r3.w
     mul r3.w, r3.w, r3.w
-    mul r3.w, r3.w, c0.z
+    mul r3.w, r3.w, r3.w
     mov r8.y, c53.y
     mad r8.xz, r8.y, c12.xyyw, r7.xyyw
     texld r9, r8.xzzw, s15

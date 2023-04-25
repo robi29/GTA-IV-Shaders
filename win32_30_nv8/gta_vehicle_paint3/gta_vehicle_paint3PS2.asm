@@ -206,7 +206,7 @@
     rcp r2.w, c53.w
     mul r2.w, r1.w, r2.w
     mul r2.w, r2.w, r2.w
-    mul r2.w, r2.w, c3.x
+    mul r2.w, r2.w, r2.w
     mov r8.y, c53.y
     mad r8.xz, r8.y, c3.yyzw, r7.xyyw
     texld r9, r8.xzzw, s15

@@ -173,7 +173,7 @@
     rcp r2.w, c53.w
     mul r2.w, r1.w, r2.w
     mul r2.w, r2.w, r2.w
-    mul r2.w, r2.w, c0.z
+    mul r2.w, r2.w, r2.w
     mov r3.y, c53.y
     mad r3.zw, r3.y, c12.xyxy, r2.xyxy
     texld r8, r3.zwzw, s15

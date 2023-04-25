@@ -192,7 +192,7 @@
     add r0.y, r0.y, -c53.w
     cmp r0.yw, r0.y, c6.xxzy, c6.xzzw
     mul r0.z, r0.z, r0.z
-    mul r0.z, r0.z, c3.z
+    mul r0.z, r0.z, r3.z
     mad r0.x, r0.x, c3.w, r0.z
     add r0.z, r0.w, r0.x
     cmp_sat r0.x, r0.z, r0.x, r0.y

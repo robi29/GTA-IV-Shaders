@@ -178,7 +178,7 @@
     rcp r4.w, c53.w
     mul r4.w, r1.w, r4.w
     mul r4.w, r4.w, r4.w
-    mul r4.w, r4.w, c2.y
+    mul r4.w, r4.w, r2.y
     mad r7.zw, c53.y, r7, r7.xyxy
     texld r9, r7.zwzw, s15
     add r6.w, r8.z, -r9.x

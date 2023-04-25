@@ -180,7 +180,7 @@
     rcp r3.y, c53.w
     mul r3.y, r1.w, r3.y
     mul r3.y, r3.y, r3.y
-    mul r3.y, r3.y, c0.w
+    mul r3.y, r3.y, r0.w
     mov r7.y, c53.y
     mad r3.zw, r7.y, c13.xyxy, r2.xyyz
     texld r8, r3.zwzw, s15

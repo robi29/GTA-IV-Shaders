@@ -104,7 +104,7 @@
 //
 
     ps_3_0
-    def c0, -0.5, 0.5, 1.33333337, 9.99999975e-005
+    def c0, -0.5, 0.5, 0.9, 9.99999975e-005
     def c1, 1.5, -0.326211989, -0.405809999, 0.0833333358
     def c2, 0, -1, -0, 9.99999975e-006
     def c3, -0.791558981, -0.597710013, -0.100000001, 1.11111116
@@ -154,7 +154,6 @@
     mad r3.xyz, r2, -r1.w, -r3
     mul r4.xyz, c18.w, c18
     dp3 r1.w, r2, -c17
-    add r1.w, r1.w, -c4.w
     mul_sat r1.w, r1.w, c0.z
     dp3_sat r2.w, -c17, r3
     add r2.w, r2.w, c0.w
@@ -388,5 +387,5 @@
     mad r1.xyz, r2, -r2.w, r1
     mad oC0.xyz, r0.w, r1, r0
 
-// approximately 271 instruction slots used (15 texture, 256 arithmetic)
+// approximately 270 instruction slots used (15 texture, 255 arithmetic)
  

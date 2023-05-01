@@ -93,7 +93,7 @@
 
     ps_3_0
     def c0, 9.99999975e-006, -0.5, 0.5, -0.25
-    def c1, 1.33333337, 1, 0, 1.5
+    def c1, 0.9, 1, 0, 1.5
     def c2, 0.0833333358, -0.100000001, 1.11111116, 3.99600005
     def c3, 4, 0.125, 0, 0
     def c4, 1, -1, 0, -0
@@ -120,7 +120,6 @@
     mad r1.xyz, r3, r1.x, c37
     mul r3.xyz, c18.w, c18
     dp3 r1.w, r2, -c17
-    add r1.w, r1.w, c0.w
     mul_sat r1.w, r1.w, c1.x
     mul r4.xyz, c61.xyww, v3.y
     mad r4.xyz, v3.x, c60.xyww, r4

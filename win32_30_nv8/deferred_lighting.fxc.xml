@@ -464,7 +464,7 @@
 					</Item>
 					<Item>
 						<Type>sampler</Type>
-						<Name>gDeferredLightSampler2</Name>
+						<Name>gDeferredLightSampler1</Name>
 						<Index value="0" />
 					</Item>
 					<Item>

@@ -75,6 +75,7 @@ Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases
     - Reflection draw distance increased
     - Increased shadows sharpness
     - Increased amount of lighting at very acute angles
+    - Corrected depth bias
 
 - gta_glass
     - Reflection draw distance increased

@@ -10,6 +10,7 @@ Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases
     - Increased shadows sharpness
     - Restored volumetric light shafts (thanks to Vaani)
     - Fixed disconnected directional shadows (thanks to Parallellines)
+    - Improved directional shadows filtering (thanks to RaphaelK12)
 
 - gta_cubemap_reflect
     - Slightly increased shadows draw distance
@@ -395,6 +396,7 @@ Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases
     - Increased shadows sharpness
     - Corrected water transparency and texture tiling
     - Fixed disconnected directional shadows (thanks to Parallellines)
+    - Improved directional shadows filtering (thanks to RaphaelK12)
 
 - waterTex
     - Ported changes from VisualIV

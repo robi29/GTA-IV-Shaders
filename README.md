@@ -392,6 +392,7 @@ Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
     - Increased shadows sharpness
+    - Corrected water transparency and texture tiling
 
 - waterTex
     - Ported changes from VisualIV

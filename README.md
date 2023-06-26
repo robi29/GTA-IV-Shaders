@@ -389,6 +389,7 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
 
 - rage_postfx
     - Ported changes from VisualIV
+    - Remade bloom shader with proper resolution scaling
 
 - shadowZ
     - Fixed dynamic shadows casted by static objects

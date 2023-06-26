@@ -131,11 +131,16 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>rage_postfx\rage_postfxPS7.asm</File>
-				<Variables value="2" >
+				<Variables value="3" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>HDRSampler</Name>
 						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
 					</Item>
 					<Item>
 						<Type>float4</Type>
@@ -147,11 +152,16 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>rage_postfx\rage_postfxPS8.asm</File>
-				<Variables value="2" >
+				<Variables value="3" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>HDRSampler</Name>
 						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
 					</Item>
 					<Item>
 						<Type>float4</Type>

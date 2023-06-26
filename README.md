@@ -1,8 +1,15 @@
 # Decompiled GTA IV shaders and fixes
 
-Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases
+Decompiled all GTA IV shaders and provided numerous fixes and improvements for them. The changelog is [below](#Changelog).
 
-# Modified shaders
+# Other interesting repositories
+
+1. Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases
+2. Recommendation: d3d9.dll from: https://github.com/RaphaelK12/GTA4-Improved-Soft-Shadows
+3. Some other shader fixes: https://github.com/Parallellines0451/GTAIV.ShaderFixesCollection
+4. FusionFix: https://github.com/ThirteenAG/GTAIV.EFLC.FusionFix
+
+# Changelog
 
 - deferred_lighting
     - Slightly increased shadows draw distance

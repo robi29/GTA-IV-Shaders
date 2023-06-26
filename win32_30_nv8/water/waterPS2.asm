@@ -94,11 +94,9 @@
     add r1.xyz, r1, c0.w
     nrm r2.xyz, r1
     mad r1.xy, r0.w, -c1, c1.z
-    mul r6.x, r0.w, -c1
     max r0.w, r1.x, c1.w
-    max r7.x, r6.x, c1.w
     mul r0.z, r0.w, v2.z
-    mul r8.x, r7.x, v2.z
+    add r8.x, v2.z, -c1.z
     dp3 r1.x, c14, r0
     add r3.xyz, -r0, c15
     dp3 r0.x, r3, r3

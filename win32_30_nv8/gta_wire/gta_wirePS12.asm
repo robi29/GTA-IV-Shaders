@@ -311,4 +311,3 @@
     cmp oC0.w, r0.x, r0.y, c2.x
 
 // approximately 200 instruction slots used (15 texture, 185 arithmetic)
- 

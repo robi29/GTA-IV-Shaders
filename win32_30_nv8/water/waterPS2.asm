@@ -321,4 +321,3 @@
     mul oC0.xyz, r2, c39.y
 
 // approximately 242 instruction slots used (19 texture, 223 arithmetic)
- 

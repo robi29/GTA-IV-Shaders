@@ -413,4 +413,3 @@
     mov o6, v6
 
 // approximately 309 instruction slots used (18 texture, 291 arithmetic)
- 

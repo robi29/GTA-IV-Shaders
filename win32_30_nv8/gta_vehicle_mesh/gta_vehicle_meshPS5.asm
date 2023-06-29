@@ -39,7 +39,7 @@
 
     ps_3_0
     def c0, 1, -0.5, 9.99999975e-006, 0
-    def c1, 0.09765625, 0, 0, 0
+    def c1, 9.765625, 0, 0, 0
     dcl_texcoord v0.xy
     dcl_texcoord1 v1.xyz
     dcl_texcoord4 v2.xyz

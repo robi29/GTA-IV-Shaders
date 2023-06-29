@@ -317,12 +317,14 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Slightly increased shadows draw distance
     - Increased shadows sharpness
     - Increased amount of lighting at very acute angles
+    - Increased specular power for chrome elements
 
 - gta_vehicle_paint1
     - Fixed normal maps
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
     - Increased shadows sharpness
+    - Increased specular power for standard vehicles
 
 - gta_vehicle_paint2
     - Fixed normal maps

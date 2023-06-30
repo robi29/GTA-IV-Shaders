@@ -325,18 +325,21 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Increased amount of lighting at very acute angles
     - Increased shadows sharpness
     - Increased specular power for standard vehicles
+    - Implemented fresnel effect for reflections
 
 - gta_vehicle_paint2
     - Fixed normal maps
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
     - Increased shadows sharpness
+    - Implemented fresnel effect for reflections
 
 - gta_vehicle_paint3
     - Fixed normal maps
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
     - Increased shadows sharpness
+    - Implemented fresnel effect for reflections
 
 - gta_vehicle_rims1
     - Slightly increased shadows draw distance

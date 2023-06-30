@@ -48,9 +48,10 @@
 //
 
     ps_3_0
-    def c0, 9.99999975e-006, 190, 0.150000006, 0
+    def c0, 9.99999975e-006, 19, 0.150000006, 0
     def c1, 1, 0, 6.80000019, 9.99999975e-005
     def c2, -13.2877121, 0.5, 0.1953125, 0
+    def c3, 4.3, 1.9, 0.35, 0 // x - fresnel power, y - reflection side power, z - reflection front power
     dcl_texcoord v0.xy
     dcl_texcoord1 v1.xyz
     dcl_texcoord3 v2.xyz
@@ -64,12 +65,22 @@
     dp3 r1.w, r1, r1
     rsq r1.w, r1.w
     mul r2.xyz, r1, r1.w
+    add r5.xyz, c0.x, v2
+    nrm r7.xyz, r5
+    dp3 r8.x, -r7, r2
+    mov_sat r8.y, -r8.x
+    add r8.y, r8_abs.y, c1.x
+    pow r8.y, r8.y, c3.x
+    rcp r8.y, r8.y
+    mad r8.y, r8.y, c3.y, c3.z
     texld r3, v0, s2
     mul r2.w, r3.w, c81.x
     mul r2.w, r2.w, c0.y
+    mul r2.w, r2.w, r8.y
     dp3 r3.x, r3, c77
     mul r3.x, r3.x, c81.x
     mul r3.x, r3.x, c0.z
+    mul r3.x, r3.x, r8.y
     mul r0.xyz, r0, c66
     mul r0, r0, v3
     dp3 r3.y, v3, c82
@@ -99,12 +110,9 @@
     mul r3.y, r4.z, r3.y
     mul r3.z, c79.x, c79.x
     mul r3.x, r3.x, r3.z
-    add r5.xyz, c0.x, v2
-    nrm r6.xyz, r5
     mul r5.xyz, r3.x, c80
-    dp3 r3.x, -r6, r2
-    add r3.x, r3.x, r3.x
-    mad r2.xyz, r2, -r3.x, -r6
+    add r3.x, r8.x, r8.x
+    mad r2.xyz, r2, -r3.x, -r7
     dp3 r2.x, -c17, r2
     add r2.y, r2.x, c1.w
     log r2.y, r2.y

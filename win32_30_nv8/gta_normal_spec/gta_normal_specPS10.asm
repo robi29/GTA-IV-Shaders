@@ -160,12 +160,12 @@
     mul r3.w, r2.y, r3.w
     mul r3.w, r3.w, r3.w
     mul r3.w, r3.w, c1.y
+    add r4.z, r4.z, -c98.z
     mad r2.zw, c53.y, r2, r0
     texld r6, r2.zwzw, s15
     add r2.z, r4.z, -r6.x
     cmp r2.z, r2.z, c5.w, c5.x
     mov r4.y, c53.y
-    add r4.z, r4.z, -c98.z
     mad r4.xw, r4.y, c10.xyzy, r0.zyzw
     texld r6, r4.xwzw, s15
     add r2.w, r4.z, -r6.x

@@ -179,12 +179,12 @@
     mul r4.w, r1.w, r4.w
     mul r4.w, r4.w, r4.w
     mul r4.w, r4.w, r2.y
+    add r8.z, r8.z, -c98.z
     mad r7.zw, c53.y, r7, r7.xyxy
     texld r9, r7.zwzw, s15
     add r6.w, r8.z, -r9.x
     cmp r6.w, r6.w, c0.z, c0.y
     mov r8.y, c53.y
-    add r8.z, r8.z, -c98.z
     mad r7.zw, r8.y, c11.xyxy, r7.xyxy
     texld r9, r7.zwzw, s15
     add r7.z, r8.z, -r9.x

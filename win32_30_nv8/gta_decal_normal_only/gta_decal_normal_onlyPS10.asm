@@ -152,12 +152,12 @@
     mul r3.y, r2.w, r3.y
     mul r3.y, r3.y, r3.y
     mul r3.y, r3.y, r3.y
+    add r2.z, r2.z, -c98.z
     mad r3.zw, c53.y, r3, r2.xyxy
     texld r5, r3.zwzw, s15
     add r3.z, r2.z, -r5.x
     cmp r3.z, r3.z, c5.w, c5.x
     mov r5.y, c53.y
-    add r2.z, r2.z, -c98.z
     mad r5.xz, r5.y, c10.xyyw, r2.xyyw
     texld r6, r5.xzzw, s15
     add r3.w, r2.z, -r6.x

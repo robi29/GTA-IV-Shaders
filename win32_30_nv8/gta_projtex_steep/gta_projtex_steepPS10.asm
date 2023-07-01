@@ -203,12 +203,12 @@
     mul r1.w, r0.w, r1.w
     mul r1.w, r1.w, r1.w
     mul r1.w, r1.w, c2.y
+    add r7.z, r7.z, -c98.z
     mad r6.zw, c53.y, r6, r6.xyxy
     texld r8, r6.zwzw, s15
     add r4.w, r7.z, -r8.x
     cmp r4.w, r4.w, -c7.z, -c7.w
     mov r7.y, c53.y
-    add r7.z, r7.z, -c98.z
     mad r6.zw, r7.y, c12.xyxy, r6.xyxy
     texld r8, r6.zwzw, s15
     add r5.w, r7.z, -r8.x

@@ -149,12 +149,12 @@
     add r0.xyz, r0, c63.xyww
     mad r0.xy, r0, r1, r2
     mov r1.zw, c6
+    add r0.z, r0.z, -c98.z
     mad r1.xy, c53.y, r1.zwzw, r0
     texld r1, r1, s15
     add r0.w, r0.z, -r1.x
     cmp r0.w, r0.w, c6.x, c6.y
     mov r1.y, c53.y
-    add r0.z, r0.z, -c98.z
     mad r1.xz, r1.y, c12.xyyw, r0.xyyw
     texld r2, r1.xzzw, s15
     add r1.x, r0.z, -r2.x

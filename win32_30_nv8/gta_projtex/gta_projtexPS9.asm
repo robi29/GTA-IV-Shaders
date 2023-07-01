@@ -167,12 +167,12 @@
     mul r1.w, r0.w, r1.w
     mul r1.w, r1.w, r1.w
     mul r1.w, r1.w, c2.y
+    add r4.z, r4.z, -c98.z
     mad r3.yz, c53.y, r3.xzww, r4.xxyw
     texld r6, r3.yzzw, s15
     add r3.y, r4.z, -r6.x
     cmp r3.y, r3.y, -c0.y, -c0.z
     mov r6.y, c53.y
-    add r4.z, r4.z, -c98.z
     mad r3.zw, r6.y, c11.xyxy, r4.xyxy
     texld r7, r3.zwzw, s15
     add r3.z, r4.z, -r7.x

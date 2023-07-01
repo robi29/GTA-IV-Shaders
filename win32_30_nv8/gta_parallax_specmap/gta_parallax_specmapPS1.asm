@@ -225,12 +225,12 @@
     mul r2.w, r0.w, r2.w
     mul r2.w, r2.w, r2.w
     mul r2.w, r2.w, c1.y
+    add r7.z, r7.z, -c98.z
     mad r6.zw, c53.y, r6, r6.xyxy
     texld r8, r6.zwzw, s15
     add r5.w, r7.z, -r8.x
     cmp r5.w, r5.w, -c3.y, -c3.z
     mov r7.y, c53.y
-    add r7.z, r7.z, -c98.z
     mad r6.zw, r7.y, c12.xyxy, r6.xyxy
     texld r8, r6.zwzw, s15
     add r6.z, r7.z, -r8.x

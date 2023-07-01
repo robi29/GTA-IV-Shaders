@@ -130,6 +130,7 @@
     def c9, -0.1408662784, -0.4797464868, 0.4949107209, -0.07115741914
     def c10, -0.4949107209, -0.07115741914, 0.1408662784, -0.4797464868
     def c11, -0.2703204087, 0.4206267664, -0.3778747872, -0.327430367
+    def c98, 0.5, 2, 0.1, 0
     dcl_texcoord v0
     dcl_texcoord1 v1
     dcl_texcoord3 v2.xyz
@@ -207,6 +208,7 @@
     mul r2.w, r2.w, r2.w
     mul r2.w, r2.w, r2.w
     mov r8.y, c53.y
+    add r7.z, r7.z, -c98.z
     mad r8.xz, r8.y, c3.yyzw, r7.xyyw
     texld r9, r8.xzzw, s15
     add r5.w, r7.z, -r9.x

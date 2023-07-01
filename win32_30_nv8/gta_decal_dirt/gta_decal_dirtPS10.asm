@@ -163,62 +163,63 @@
     mul r3.w, r3.w, r3.w
     mul r3.w, r3.w, r3.w
     mov r6.y, c53.y
+    mul r8.xy, r6.yy, c98.xy
     add r5.z, r5.z, -c98.z
-    mad r6.xz, r6.y, c2.yyzw, r5.xyyw
+    mad r6.xz, r8.xy, c2.yyzw, r5.xyyw
     texld r7, r6.xzzw, s15
     add r5.w, r5.z, -r7.x
     cmp r5.w, r5.w, -c0.y, -c0.z
-    mad r6.xz, r6.y, c11.xyyw, r5.xyyw
+    mad r6.xz, r8.xy, c11.xyyw, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c11.zyww, r5.xyyw
+    mad r6.xz, r8.xy, c11.zyww, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c10.xyyw, r5.xyyw
+    mad r6.xz, r8.xy, c10.xyyw, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c10.zyww, r5.xyyw
+    mad r6.xz, r8.xy, c10.zyww, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c9.xyyw, r5.xyyw
+    mad r6.xz, r8.xy, c9.xyyw, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c9.zyww, r5.xyyw
+    mad r6.xz, r8.xy, c9.zyww, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c8.xyyw, r5.xyyw
+    mad r6.xz, r8.xy, c8.xyyw, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c8.zyww, r5.xyyw
+    mad r6.xz, r8.xy, c8.zyww, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c7.xyyw, r5.xyyw
+    mad r6.xz, r8.xy, c7.xyyw, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r6.xz, r6.y, c7.zyww, r5.xyyw
+    mad r6.xz, r8.xy, c7.zyww, r5.xyyw
     texld r7, r6.xzzw, s15
     add r6.x, r5.z, -r7.x
     cmp r6.x, r6.x, -c0.y, -c0.z
     add r5.w, r5.w, r6.x
-    mad r5.xy, r6.y, c3, r5
+    mad r5.xy, r8.xy, c3, r5
     texld r6, r5, s15
     add r5.x, r5.z, -r6.x
     cmp r5.x, r5.x, -c0.y, -c0.z

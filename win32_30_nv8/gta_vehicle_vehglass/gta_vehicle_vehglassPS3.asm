@@ -182,62 +182,63 @@
     mul r3.y, r3.y, r3.y
     mul r3.y, r3.y, r0.w
     mov r7.y, c53.y
+    mul r9.xy, r7.yy, c98.xy
     add r2.w, r2.w, -c98.z
-    mad r3.zw, r7.y, c13.xyxy, r2.xyyz
+    mad r3.zw, r9.xy, c13.xyxy, r2.xyyz
     texld r8, r3.zwzw, s15
     add r3.z, r2.w, -r8.x
     cmp r3.z, r3.z, c4.y, c4.x
-    mad r7.xz, r7.y, c13.zyww, r2.yyzw
+    mad r7.xz, r9.xy, c13.zyww, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c12.xyyw, r2.yyzw
+    mad r7.xz, r9.xy, c12.xyyw, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c12.zyww, r2.yyzw
+    mad r7.xz, r9.xy, c12.zyww, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c11.xyyw, r2.yyzw
+    mad r7.xz, r9.xy, c11.xyyw, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c11.zyww, r2.yyzw
+    mad r7.xz, r9.xy, c11.zyww, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c10.xyyw, r2.yyzw
+    mad r7.xz, r9.xy, c10.xyyw, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c10.zyww, r2.yyzw
+    mad r7.xz, r9.xy, c10.zyww, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c9.xyyw, r2.yyzw
+    mad r7.xz, r9.xy, c9.xyyw, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c9.zyww, r2.yyzw
+    mad r7.xz, r9.xy, c9.zyww, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r7.xz, r7.y, c8.xyyw, r2.yyzw
+    mad r7.xz, r9.xy, c8.xyyw, r2.yyzw
     texld r8, r7.xzzw, s15
     add r3.w, r2.w, -r8.x
     cmp r3.w, r3.w, c4.y, c4.x
     add r3.z, r3.z, r3.w
-    mad r2.yz, r7.y, c8.xzww, r2
+    mad r2.yz, r9.xy, c8.xzww, r2
     texld r7, r2.yzzw, s15
     add r2.y, r2.w, -r7.x
     cmp r2.y, r2.y, c4.y, c4.x

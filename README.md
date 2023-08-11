@@ -11,6 +11,9 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
 
 # Changelog
 
+- cascadeConvert
+    - Fixed the issue when improper shadow was drawn on water surface or some textures at particular camera angles (thanks to Parallellines)
+
 - deferred_lighting
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles

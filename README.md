@@ -17,11 +17,10 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
 - deferred_lighting
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
-    - Increased shadows sharpness
     - Restored volumetric light shafts (thanks to Vaani)
     - Fixed disconnected directional shadows (thanks to Parallellines)
-    - Improved directional shadows filtering (thanks to RaphaelK12)
     - Sharpened dynamic shadows
+    - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
 
 - gta_cubemap_reflect
     - Slightly increased shadows draw distance
@@ -544,10 +543,9 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Fixed shadow offset on water surface
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
-    - Increased shadows sharpness
     - Corrected water transparency and texture tiling
     - Fixed disconnected directional shadows (thanks to Parallellines)
-    - Improved directional shadows filtering (thanks to RaphaelK12)
+    - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
 
 - waterTex
     - Ported changes from VisualIV

@@ -21,6 +21,7 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Restored volumetric light shafts (thanks to Vaani)
     - Fixed disconnected directional shadows (thanks to Parallellines)
     - Improved directional shadows filtering (thanks to RaphaelK12)
+    - Sharpened dynamic shadows
 
 - gta_cubemap_reflect
     - Slightly increased shadows draw distance

@@ -69,6 +69,8 @@
     dcl_2d s5
     dcl_2d s14
     mul r0.xyz, c85.w, c85
+    mov r11.z, c77.z        // shadow softness
+    mul r11.z, r11.z, c1.y  // * 0.5
     add r1.xy, c0.x, vPos
     mul r1.xy, r1, c86.zwzw
     texld r2, r1, s5
@@ -151,11 +153,11 @@
     frc r1.x, r1.x
     mad r1.x, r1.x, c5.x, c5.y
     sincos r9.xy, r1.x
-    mul r2.zw, r9.xyyx, c77.z
+    mul r2.zw, r9.xyyx, r11.z
     mul r10, r9.xyxy, c5.zwwz
-    mul r4.zw, -r9.xyyx, c77.z
-    mul r9.xy, r10, c77.z
-    mad_sat r9.zw, r10, c77.z, r2.xyxy
+    mul r4.zw, -r9.xyyx, r11.z
+    mul r9.xy, r10, r11.z
+    mad_sat r9.zw, r10, r11.z, r2.xyxy
     mad_sat r2.zw, r2, c2.w, r2.xyxy
     mad_sat r9.xy, r9, c1.y, r2
     mad_sat r2.xy, r4.zwzw, c3.w, r2

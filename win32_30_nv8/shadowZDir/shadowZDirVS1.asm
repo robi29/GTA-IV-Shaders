@@ -27,7 +27,7 @@
 
     vs_3_0
     def c0, 765.005859, 1, 0, -0.5
-    def c1, 2, 9.99999994e-009, 0, 0
+    def c1, 2, 9.99999994e-009, 0, -0.55
     dcl_position v0
     dcl_blendweight v1
     dcl_blendindices v2
@@ -103,7 +103,7 @@
         mad r0.xyz, r0.z, c62, r0.xyww
         add r0.xyz, r0, c63
         mov r3.z, c57.z
-        add r3.z, r3.z, c0.w
+        add r3.z, r3.z, c1.w
         mul r3.xy, r0, r3.z
         mov r3.w, -r0.z
         mov r0.x, c57.x

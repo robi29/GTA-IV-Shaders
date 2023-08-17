@@ -77,7 +77,7 @@
     def c16, 0.159154937, 0.5, 6.28318548, -3.14159274
     def c19, 3, 7.13800001, 1.2, 4.8
     def c20, 0.75, -0.5, 0.5, 0
-    def c21, 0.25, 0.5, 0.75, 0
+    def c21, 0.25, 0.5, 0.75, 0.00048828125
     def c22, 0.5, 0.25, 0.125, 1
     dcl_texcoord v0
     dcl_texcoord1 v1
@@ -119,6 +119,7 @@
     add r3.z, r3.z, c13.w           // depth bias
 
     mov r3.xy, c53.yy
+    max r3.xy, r3.xy, c21.ww        // prevents from too sharp shadows when using ShadowResFix
     mul r3.xy, r3.xy, c19.zw        // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
     add r7.xyz, r0.y, -c21.xyz

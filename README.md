@@ -115,10 +115,9 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
 
 - gta_glass
     - Reflection draw distance increased
-    - Increased shadows sharpness
     - Increased amount of lighting at very acute angles
     - Fixed disconnected directional shadows (thanks to Parallellines)
-    - Improved directional shadows filtering (thanks to RaphaelK12)
+    - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
 
 - gta_glass_emissive
     - Reflection draw distance increased

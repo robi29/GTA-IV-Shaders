@@ -90,6 +90,7 @@
     dcl_color v3
     dcl_texcoord2 v4.xyz
     dcl_texcoord7 v5.xy
+    dcl vPos.xy
     dcl_2d s0
     dcl_2d s1
     dcl_2d s2
@@ -195,9 +196,10 @@
     cmp r27.w, r27.z, c13.z, r27.w      // cascade 3-4
     mul r21.xy, r21.xy, r27.w           // texel size multiplier
 
+    mul r23.xy, c44.zw, vPos
     mov r22.xy, c10.xy
     mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
-    dp2add r22.y, v0, r22, c2.w         // v0.x * r2.x + v0.y * r2.y
+    dp2add r22.y, r23, r22, c2.w        // v0.x * r2.x + v0.y * r2.y
     mad r22.y, r22.y, c9.x, c9.y
     frc r22.y, r22.y
     mad r22.y, r22.y, c9.z, c9.w        // r2.y * 2pi - pi

@@ -105,47 +105,47 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
-    add r1.z, r1.z, c9.w            // depth bias
+    add r21.z, r1.z, c9.w               // depth bias
 
-    mov r1.xy, c53.yy
-    max r1.xy, r1.xy, c13.ww        // prevents from too sharp shadows when using ShadowResFix
-    mul r1.xy, r1.xy, c11.zw        // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
+    mov r21.xy, c53.yy
+    max r21.xy, r21.xy, c13.ww          // prevents from too sharp shadows when using ShadowResFix
+    mul r21.xy, r21.xy, c11.zw          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
-    add r7.xyz, r0.z, -c13.xyz
-    cmp r7.w, r7.x, c16.x, c16.w    // cascade 1-2
-    cmp r7.w, r7.y, c16.y, r7.w     // cascade 2-3
-    cmp r7.w, r7.z, c16.z, r7.w     // cascade 3-4
-    mul r1.xy, r1.xy, r7.w          // texel size multiplier
+    add r27.xyz, r0.z, -c13.xyz
+    cmp r27.w, r27.x, c16.x, c16.w      // cascade 1-2
+    cmp r27.w, r27.y, c16.y, r27.w      // cascade 2-3
+    cmp r27.w, r27.z, c16.z, r27.w      // cascade 3-4
+    mul r21.xy, r21.xy, r27.w           // texel size multiplier
 
-    mov r2.xy, c11.xy
-    mul r2.xy, r2.xy, c44.xy        // r2.xy * screen dimensions
-    dp2add r2.y, v0, r2, c4.w       // v0.x * r2.x + v0.y * r2.y
-    mad r2.y, r2.y, c10.x, c10.y
-    frc r2.y, r2.y
-    mad r2.y, r2.y, c10.z, c10.w    // r2.y * 2pi - pi
-    sincos r3.xy, r2.y              // sine & cosine of r2.y
-    mul r4, r3.yxxy, c9.xxyz
-    mul r3, r3.yxxy, c12.xxyz
+    mov r22.xy, c11.xy
+    mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
+    dp2add r22.y, v0, r22, c4.w         // v0.x * r2.x + v0.y * r2.y
+    mad r22.y, r22.y, c10.x, c10.y
+    frc r22.y, r22.y
+    mad r22.y, r22.y, c10.z, c10.w      // r2.y * 2pi - pi
+    sincos r23.xy, r22.y                // sine & cosine of r2.y
+    mul r24, r23.yxxy, c9.xxyz
+    mul r23, r23.yxxy, c12.xxyz
 
-    mad r5.xy, r4.xy, r1.xy, r0.zw  // offset * texel size + UV
-    texld r5, r5, s15               // sample #1
-    mov r6.x, r5.x                  // copy to r6
+    mad r25.xy, r24.xy, r21.xy, r0.zw   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #1
+    mov r26.x, r25.x                    // copy to r6
 
-    mad r5.xy, r4.zw, r1.xy, r0.zw  // offset * texel size + UV
-    texld r5, r5, s15               // sample #2
-    mov r6.y, r5.x                  // copy to r6
+    mad r25.xy, r24.zw, r21.xy, r0.zw   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #2
+    mov r26.y, r25.x                    // copy to r6
 
-    mad r5.xy, r3.xy, r1.xy, r0.zw  // offset * texel size + UV
-    texld r5, r5, s15               // sample #3
-    mov r6.z, r5.x                  // copy to r6
+    mad r25.xy, r23.xy, r21.xy, r0.zw   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #3
+    mov r26.z, r25.x                    // copy to r6
 
-    mad r5.xy, r3.zw, r1.xy, r0.zw  // offset * texel size + UV
-    texld r5, r5, s15               // sample #4
-    mov r6.w, r5.x                  // copy to r6
+    mad r25.xy, r23.zw, r21.xy, r0.zw   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #4
+    mov r26.w, r25.x                    // copy to r6
 
-    add r6, r1.z, -r6
-    cmp r6, r6, c4.z, c4.w          // depth bias
-    dp4 r0.z, r6, c4.z              // sum
+    add r26, r21.z, -r26
+    cmp r26, r26, c4.z, c4.w            // depth bias
+    dp4 r0.z, r26, c4.z                 // sum
 
     rcp r0.w, c53.w
     mul r0.w, r0.y, r0.w

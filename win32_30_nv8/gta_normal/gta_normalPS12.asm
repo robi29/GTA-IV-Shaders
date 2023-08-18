@@ -181,9 +181,10 @@
     cmp r27.w, r27.z, c10.z, r27.w      // cascade 3-4
     mul r21.xy, r21.xy, r27.w           // texel size multiplier
 
+    mul r23.xy, c44.zw, vPos
     mov r22.xy, c7.xy
     mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
-    dp2add r22.y, v0, r22, c1.w         // v0.x * r2.x + v0.y * r2.y
+    dp2add r22.y, r23, r22, c1.w        // v0.x * r2.x + v0.y * r2.y
     mad r22.y, r22.y, c6.x, c6.y
     frc r22.y, r22.y
     mad r22.y, r22.y, c6.z, c6.w        // r2.y * 2pi - pi

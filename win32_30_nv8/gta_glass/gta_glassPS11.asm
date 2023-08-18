@@ -214,7 +214,7 @@
     add r21.z, r5.z, c5.w               // depth bias
 
     mov r21.xy, c53.yy
-    max r21.xy, r21.xy, c9.ww          // prevents from too sharp shadows when using ShadowResFix
+    max r21.xy, r21.xy, c9.ww           // prevents from too sharp shadows when using ShadowResFix
     mul r21.xy, r21.xy, c7.zw           // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
     add r27.xyz, r5.x, -c9.xyz
@@ -223,9 +223,10 @@
     cmp r27.w, r27.z, c10.z, r27.w      // cascade 3-4
     mul r21.xy, r21.xy, r27.w           // texel size multiplier
 
+    mul r23.xy, c44.zw, vPos
     mov r22.xy, c7.xy
     mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
-    dp2add r22.y, v0, r22, c3.x         // v0.x * r2.x + v0.y * r2.y
+    dp2add r22.y, r23, r22, c3.x        // v0.x * r2.x + v0.y * r2.y
     mad r22.y, r22.y, c6.x, c6.y
     frc r22.y, r22.y
     mad r22.y, r22.y, c6.z, c6.w        // r2.y * 2pi - pi

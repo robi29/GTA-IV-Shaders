@@ -115,48 +115,54 @@
     mad r3.xyz, r8.x, c62.xyww, r3
     add r3.xyz, r3, c63.xyww
     mad r0.yz, r3.xxyw, r4.xxyw, r5.xxyw
+    rcp r8.x, c66.y
+    mov r7.y, -r8.x
+    rcp r7.xz, c66.x
+    add r7.xyz, r7, v0.xyxw
+    rcp r8.x, v0.z
+    mul r7.xyz, r7, r8.x
 
-    add r3.z, r3.z, c13.w           // depth bias
+    add r21.z, r3.z, c13.w              // depth bias
 
-    mov r3.xy, c53.yy
-    max r3.xy, r3.xy, c21.ww        // prevents from too sharp shadows when using ShadowResFix
-    mul r3.xy, r3.xy, c19.zw        // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
+    mov r21.xy, c53.yy
+    max r21.xy, r21.xy, c21.ww          // prevents from too sharp shadows when using ShadowResFix
+    mul r21.xy, r21.xy, c19.zw          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
-    add r7.xyz, r0.y, -c21.xyz
-    cmp r7.w, r7.x, c22.x, c22.w    // cascade 1-2
-    cmp r7.w, r7.y, c22.y, r7.w     // cascade 2-3
-    cmp r7.w, r7.z, c22.z, r7.w     // cascade 3-4
-    mul r3.xy, r3.xy, r7.w          // texel size multiplier
+    add r27.xyz, r0.y, -c21.xyz
+    cmp r27.w, r27.x, c22.x, c22.w      // cascade 1-2
+    cmp r27.w, r27.y, c22.y, r27.w      // cascade 2-3
+    cmp r27.w, r27.z, c22.z, r27.w      // cascade 3-4
+    mul r21.xy, r21.xy, r27.w           // texel size multiplier
 
-    mov r4.xy, c19.xy
-    mul r4.xy, r4.xy, c44.xy        // r2.xy * screen dimensions
-    dp2add r4.y, v0, r4, c1.w       // v0.x * r2.x + v0.y * r2.y
-    mad r4.y, r4.y, c16.x, c16.y
-    frc r4.y, r4.y
-    mad r4.y, r4.y, c16.z, c16.w    // r2.y * 2pi - pi
-    sincos r5.xy, r4.y              // sine & cosine of r2.y
-    mul r6, r5.yxxy, c13.xxyz
-    mul r5, r5.yxxy, c20.xxyz
+    mov r22.xy, c19.xy
+    mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
+    dp2add r22.y, r7, r22, c1.w         // v0.x * r2.x + v0.y * r2.y
+    mad r22.y, r22.y, c16.x, c16.y
+    frc r22.y, r22.y
+    mad r22.y, r22.y, c16.z, c16.w      // r2.y * 2pi - pi
+    sincos r23.xy, r22.y                // sine & cosine of r2.y
+    mul r24, r23.yxxy, c13.xxyz
+    mul r23, r23.yxxy, c20.xxyz
 
-    mad r7.xy, r6.xy, r3.xy, r0.yz  // offset * texel size + UV
-    texld r7, r7, s15               // sample #1
-    mov r8.x, r7.x                  // copy to r6
+    mad r25.xy, r24.xy, r21.xy, r0.yz   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #1
+    mov r26.x, r25.x                    // copy to r6
 
-    mad r7.xy, r6.zw, r3.xy, r0.yz  // offset * texel size + UV
-    texld r7, r7, s15               // sample #2
-    mov r8.y, r7.x                  // copy to r6
+    mad r25.xy, r24.zw, r21.xy, r0.yz   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #2
+    mov r26.y, r25.x                    // copy to r6
 
-    mad r7.xy, r5.xy, r3.xy, r0.yz  // offset * texel size + UV
-    texld r7, r7, s15               // sample #3
-    mov r8.z, r7.x                  // copy to r6
+    mad r25.xy, r23.xy, r21.xy, r0.yz   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #3
+    mov r26.z, r25.x                    // copy to r6
 
-    mad r7.xy, r5.zw, r3.xy, r0.yz  // offset * texel size + UV
-    texld r7, r7, s15               // sample #4
-    mov r8.w, r7.x                  // copy to r6
+    mad r25.xy, r23.zw, r21.xy, r0.yz   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #4
+    mov r26.w, r25.x                    // copy to r6
 
-    add r8, r3.z, -r8
-    cmp r8, r8, c1.z, c1.w          // depth bias
-    dp4 r0.y, r8, c1.z              // sum
+    add r26, r21.z, -r26
+    cmp r26, r26, c1.z, c1.w            // depth bias
+    dp4 r0.y, r26, c1.z                 // sum
 
     rcp r0.z, c53.w
     mul r0.z, r0.x, r0.z
@@ -219,12 +225,6 @@
     mul r5.xyz, r0.x, r5
     mul r6.xyz, r0.x, r6
     mul r6.xyz, r6, c17.w // specular
-    rcp r0.x, c66.y
-    mov r7.y, -r0.x
-    rcp r7.xz, c66.x
-    add r7.xyz, r7, v0.xyxw
-    rcp r0.x, v0.z
-    mul r7.xyz, r7, r0.x
     mad r7.xyz, r7, c3.xxyw, c3.y
     texld r8, r7.zyzw, s2
     add r0.x, -c75.x, c75.y

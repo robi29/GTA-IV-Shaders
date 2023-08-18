@@ -27,6 +27,7 @@
 //   float4 globalScalars;
 //   float specularColorFactor;
 //   float specularFactor;
+//   float4 globalScreenSize;
 //
 //
 // Registers:
@@ -43,6 +44,7 @@
 //   globalFogParams      c41      1
 //   globalFogColor       c42      1
 //   globalFogColorN      c43      1
+//   globalScreenSize     c44      1
 //   gShadowParam18192021 c53      1
 //   gFacetCentre         c54      1
 //   gShadowParam14151617 c56      1
@@ -61,17 +63,16 @@
 
     ps_3_0
     def c0, -0.5, 9.99999975e-006, 0.5, 0.9
-    def c1, 9.99999975e-005, 1.5, -0.4548159977, 0.2077075065
-    def c2, 0, 0.5, 0.0833333358, 1.00000001e-007
+    def c1, 9.99999975e-005, 1.5, 0.25, 1.00000001e-007
+    def c2, 0, -1, -0, 1
     def c3, 3.99600005, 4, 0.125, 0.25
     def c4, 0.212500006, 0.715399981, 0.0720999986, 0
-    def c5, 0, -1, -0, 1
-    def c6, 0.4548159977, 0.2077075065, 0, 0
-    def c7, 0.3778747872, -0.327430367, 0.2703204087, 0.4206267664
-    def c8, -0.1408662784, -0.4797464868, 0.4949107209, -0.07115741914
-    def c9, -0.4949107209, -0.07115741914, 0.1408662784, -0.4797464868
-    def c10, -0.2703204087, 0.4206267664, -0.3778747872, -0.327430367
-    def c98, 0.5, 2, 0.1, 0
+    def c5, -0.25, 1, -1, -0.07
+    def c6, 0.159154937, 0.5, 6.28318548, -3.14159274
+    def c7, 3, 7.13800001, 1.2, 4.8
+    def c8, 0.75, -0.5, 0.5, 0
+    def c9, 0.25, 0.5, 0.75, 0.00048828125
+    def c10, 0.5, 0.25, 0.125, 1
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
     dcl_texcoord3 v2.xyz
@@ -95,18 +96,18 @@
     cmp r0.xy, vPos, r0, -r0
     mul r0.xy, r0, c3.w
     mad r0.xy, r1, c3.w, r0
-    mov r0.zw, c5.x
+    mov r0.zw, c2.x
     texldl r0, r0, s10
-    cmp r0, -r0.y, c5.y, c5.z
+    cmp r0, -r0.y, c2.y, c2.z
     texkill r0
     texld r0, v0, s1
-    add r0.z, -r0.w, c5.w
+    add r0.z, -r0.w, c2.w
     add r0.z, -r0.x, r0.z
     cmp r0.xy, r0.z, r0.wyzw, r0
     texld r1, v0, s0
     add r0.zw, r0.xyxy, c0.x
     mul r0.zw, r0, c73.x
-    dp2add r0.x, r0, -r0, c5.w
+    dp2add r0.x, r0, -r0, c2.w
     rsq r0.x, r0.x
     rcp r0.x, r0.x
     mul r2.xyz, r0.z, v3
@@ -137,8 +138,8 @@
     add r2.xyz, r2, c63.xyww
     dp3 r2.w, c14, v6
     add r5.xyz, -r2.w, -c54
-    cmp r5.yzw, r5.xxyz, c5.w, c5.x
-    mov r5.x, c5.w
+    cmp r5.yzw, r5.xxyz, c2.w, c2.x
+    mov r5.x, c2.w
     dp4 r6.x, r5, c57
     dp4 r6.y, r5, c58
     dp4 r7.x, r5, c59
@@ -152,71 +153,52 @@
     mul r3.y, r2.w, r3.y
     mul r3.y, r3.y, r3.y
     mul r3.y, r3.y, c1.y
-    mov r5.y, c53.y
-    mul r7.xy, r5.yy, c98.xy
-    add r2.z, r2.z, -c98.z
-    mad r3.zw, r7.xy, r3, r2.xyxy
-    texld r5, r3.zwzw, s15
-    add r3.z, r2.z, -r5.x
-    cmp r3.z, r3.z, c5.w, c5.x
-    mad r5.xz, r7.xy, c10.xyyw, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c10.zyww, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c9.xyyw, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c9.zyww, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c8.xyyw, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c8.zyww, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c7.xyyw, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c7.zyww, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c6.xyyw, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r5.xz, r7.xy, c6.zyww, r2.xyyw
-    texld r6, r5.xzzw, s15
-    add r3.w, r2.z, -r6.x
-    cmp r3.w, r3.w, c5.w, c5.x
-    add r3.z, r3.z, r3.w
-    mad r2.xy, r7.xy, c2, r2
-    texld r5, r2, s15
-    add r2.x, r2.z, -r5.x
-    cmp r2.x, r2.x, c5.w, c5.x
-    add r2.x, r3.z, r2.x
-    mad r2.x, r2.x, c2.z, r3.y
+
+    add r21.z, r2.z, c5.w               // depth bias
+
+    mov r21.xy, c53.yy
+    max r21.xy, r21.xy, c9.ww           // prevents from too sharp shadows when using ShadowResFix
+    mul r21.xy, r21.xy, c7.zw           // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
+
+    add r27.xyz, r2.x, -c9.xyz
+    cmp r27.w, r27.x, c10.x, c10.w      // cascade 1-2
+    cmp r27.w, r27.y, c10.y, r27.w      // cascade 2-3
+    cmp r27.w, r27.z, c10.z, r27.w      // cascade 3-4
+    mul r21.xy, r21.xy, r27.w           // texel size multiplier
+
+    mov r22.xy, c7.xy
+    mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
+    dp2add r22.y, v0, r22, c2.x         // v0.x * r2.x + v0.y * r2.y
+    mad r22.y, r22.y, c6.x, c6.y
+    frc r22.y, r22.y
+    mad r22.y, r22.y, c6.z, c6.w        // r2.y * 2pi - pi
+    sincos r23.xy, r22.y                // sine & cosine of r2.y
+    mul r24, r23.yxxy, c5.xxyz
+    mul r23, r23.yxxy, c8.xxyz
+
+    mad r25.xy, r24.xy, r21.xy, r2.xy   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #1
+    mov r26.x, r25.x                    // copy to r6
+
+    mad r25.xy, r24.zw, r21.xy, r2.xy   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #2
+    mov r26.y, r25.x                    // copy to r6
+
+    mad r25.xy, r23.xy, r21.xy, r2.xy   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #3
+    mov r26.z, r25.x                    // copy to r6
+
+    mad r25.xy, r23.zw, r21.xy, r2.xy   // offset * texel size + UV
+    texld r25, r25, s15                 // sample #4
+    mov r26.w, r25.x                    // copy to r6
+
+    add r26, r21.z, -r26
+    cmp r26, r26, c2.w, c2.x            // depth bias
+    dp4 r2.x, r26, c2.w                 // sum
+
+    mad r2.x, r2.x, c1.z, r3.y
     add r2.y, r2.w, -c53.w
-    cmp r2.yz, r2.y, c5.xwyw, c5.xxzw
+    cmp r2.yz, r2.y, c2.xwyw, c2.xxzw
     add r2.z, r2.x, r2.z
     cmp_sat r2.x, r2.z, r2.x, r2.y
     mul r2.yzw, r4.xxyz, r3.x
@@ -225,7 +207,7 @@
     mul r3.xyz, r2.x, r3
     mul r2.xyz, r2.yzww, c17.w
     mad r0.xyz, r0, v5.x, r3
-    mov r0.w, c5.w
+    mov r0.w, c2.w
     mul r0, r1, r0
     mad r0.xyz, c72.x, r2, r0
     mul oC0.w, r0.w, c39.x
@@ -233,14 +215,14 @@
     add r1.x, -c16.z, c16.w
     rcp r1.x, r1.x
     mul_sat r0.w, r0.w, r1.x
-    add r0.w, -r0.w, c5.w
-    mov r1.y, c5.y
+    add r0.w, -r0.w, c2.w
+    mov r1.y, c2.y
     add r1.xy, r1.y, c16
     mul r1.y, r0.w, r1.y
-    mad r0.w, r0.w, r1.x, c5.w
+    mad r0.w, r0.w, r1.x, c2.w
     dp3 r1.x, r0, c4
     lrp r2.xyz, r0.w, r0, r1.x
-    add r0.x, r1.x, c2.w
+    add r0.x, r1.x, c1.w
     pow r2.w, r0_abs.x, r1.y
     mul r0.xyz, r2, r2.w
     rcp r0.w, c41.x

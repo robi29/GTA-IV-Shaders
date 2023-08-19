@@ -72,11 +72,11 @@
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
 
-    def c99, 0.5, 2, 0.25, 0
-    def c100, -9, 1, 0, 0.01
+    def c99, 0.5, 2, 0.25, -50
+    def c100, -15, 1, 0, 0.008
 
-    defi i0, 19, 0, 0, 0
-    defi i1, 19, 0, 0, 0
+    defi i0, 31, 0, 0, 0
+    defi i1, 31, 0, 0, 0
 
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
@@ -145,8 +145,10 @@
             texld r10, r11.xy, s15
             add r10.x, r10.x, -r1.z
 
-            if_gt r10.x, r13.x
-                add r14.x, r14.x, r10.x
+            add r16.x, r10.x, -r13.x
+
+            if_gt r16.x, c99.w
+                add r14.x, r14.x, r10_abs.x
                 add r10.z, r10.z, c3.x
             endif
 
@@ -157,12 +159,12 @@
     endrep
 
     // avg if any blockers
-    if_gt r10.z, c3.y
+    //if_gt r10.z, c3.y
         rcp r10.z, r10.z
         mul r14.x, r14.x, r10.z
-    else
-        mov r14.x, c3.y
-    endif
+    //else
+    //    mov r14.x, c3.y
+    //endif
 
     add r14.x, r14.x, -r13.x // blocker - receiver
     //rcp r10.x, r14.x // 1 / blocker
@@ -170,10 +172,12 @@
     //rcp r10.x, r13.x // 1 / receiver
     //mul r14.x, r14.x, r10.x // (blocker - receiver) / receiver
 
-    mul r14.x, r14.x, c100.w // * 0.01
+    mul r14.x, r14.x, c100.w // * 0.008
+
+    //add r14.x, r14.x, -c99.y // -2
 
     max r14.x, r14.x, c3.y // > 0
-    min r14.x, r14.x, c6.x // < 10
+    //min r14.x, r14.x, c6.x // < 10
 
     //add r14.x, r14.x, c99.z // add 0.25
 

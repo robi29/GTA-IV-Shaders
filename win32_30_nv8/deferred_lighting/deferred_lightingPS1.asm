@@ -71,6 +71,13 @@
     def c11, 0.75, -0.5, 0.5, 0
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
+
+    def c99, 0.5, 2, 0.25, 0
+    def c100, -9, 1, 0, 0.01
+
+    defi i0, 19, 0, 0, 0
+    defi i1, 19, 0, 0, 0
+
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
     dcl_2d s0
@@ -119,9 +126,62 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
+    mov r10.z, c3.y // blockers
+
+    mov r15.xy, c53.yy
+    mul r15.xy, r15.xy, c99.xy
+
+    // center
+    texld r10, r0.zw, s15
+    mov r13.x, r10.x
+    add r13.x, r13.x, -r1.z // center shadow depth
+
+    mov r31.xy, c100.xx // x - i1 loop index, y - i0 loop index
+    mov r14.x, c100.z // sum
+
+    rep i0
+        rep i1
+            mad r11.xy, r15.xy, r31.xy, r0.zw
+            texld r10, r11.xy, s15
+            add r10.x, r10.x, -r1.z
+
+            if_gt r10.x, r13.x
+                add r14.x, r14.x, r10.x
+                add r10.z, r10.z, c3.x
+            endif
+
+            add r31.x, r31.x, c100.y // j++
+        endrep
+        add r31.y, r31.y, c100.y // i++
+        mov r31.x, c100.x // j = -7
+    endrep
+
+    // avg if any blockers
+    if_gt r10.z, c3.y
+        rcp r10.z, r10.z
+        mul r14.x, r14.x, r10.z
+    else
+        mov r14.x, c3.y
+    endif
+
+    add r14.x, r14.x, -r13.x // blocker - receiver
+    //rcp r10.x, r14.x // 1 / blocker
+    //mul r14.x, r14.x, r10.x // (blocker - receiver) / blocker
+    //rcp r10.x, r13.x // 1 / receiver
+    //mul r14.x, r14.x, r10.x // (blocker - receiver) / receiver
+
+    mul r14.x, r14.x, c100.w // * 0.01
+
+    max r14.x, r14.x, c3.y // > 0
+    min r14.x, r14.x, c6.x // < 10
+
+    //add r14.x, r14.x, c99.z // add 0.25
+
+    mul r21.xy, c53.yy, r14.xx
+
     add r21.z, r1.z, c8.w               // depth bias
 
-    mov r21.xy, c53.xy
+    //mov r21.xy, c53.xy
     max r21.xy, r21.xy, c10.zw          // prevents from too sharp shadows when using ShadowResFix
     mul r21.xy, r21.xy, c12.ww          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 

@@ -1058,58 +1058,6 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS2.asm</File>
-				<Variables value="5" >
-					<Item>
-						<Type>sampler</Type>
-						<Name>DepthMapTexSampler</Name>
-						<Index value="12" />
-					</Item>
-					<Item>
-						<Type>sampler</Type>
-						<Name>DiffuseTexSampler</Name>
-						<Index value="0" />
-					</Item>
-					<Item>
-						<Type>float</Type>
-						<Name>HybridAdd</Name>
-						<Index value="72" />
-					</Item>
-					<Item>
-						<Type>float4</Type>
-						<Name>gInvScreenSize</Name>
-						<Index value="129" />
-					</Item>
-					<Item>
-						<Type>float</Type>
-						<Name>gSoftness</Name>
-						<Index value="66" />
-					</Item>
-				</Variables>
-			</Item>
-			<Item>
-				<DataType>asm</DataType>
-				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS3.asm</File>
-				<Variables value="3" >
-					<Item>
-						<Type>sampler</Type>
-						<Name>DiffuseTexSampler</Name>
-						<Index value="0" />
-					</Item>
-					<Item>
-						<Type>float</Type>
-						<Name>HybridAdd</Name>
-						<Index value="66" />
-					</Item>
-					<Item>
-						<Type>float4</Type>
-						<Name>globalScalars</Name>
-						<Index value="39" />
-					</Item>
-				</Variables>
-			</Item>
-			<Item>
-				<DataType>asm</DataType>
-				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS4.asm</File>
 				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
@@ -1138,8 +1086,70 @@
 					</Item>
 					<Item>
 						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS3.asm</File>
+				<Variables value="3" >
+					<Item>
+						<Type>sampler</Type>
+						<Name>DiffuseTexSampler</Name>
+						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>HybridAdd</Name>
+						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS4.asm</File>
+				<Variables value="7" >
+					<Item>
+						<Type>sampler</Type>
+						<Name>DepthMapTexSampler</Name>
+						<Index value="12" />
+					</Item>
+					<Item>
+						<Type>sampler</Type>
+						<Name>DiffuseTexSampler</Name>
+						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>HybridAdd</Name>
+						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>gInvScreenSize</Name>
+						<Index value="129" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>gSoftness</Name>
+						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScalars</Name>
+						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>

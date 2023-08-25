@@ -16,6 +16,7 @@
 //   ------------------ ----- ----
 //   gSoftness          c66      1
 //   HybridAdd          c72      1
+//   NearFarPlane       c128     1
 //   gInvScreenSize     c129     1
 //   DiffuseTexSampler  s0       1
 //   DepthMapTexSampler s12      1
@@ -23,7 +24,7 @@
 
     ps_3_0
     def c0, 0.5, 0.212500006, 0.715399981, 0.0720999986
-    def c1, -1, 1, 0, 0
+    def c1, -1, 1, 0, 0.013333333
     dcl_color v0
     dcl_texcoord v1
     dcl_texcoord1 v2.zw
@@ -35,6 +36,14 @@
     dcl_2d s12
     mad r0.xy, vPos, c129, c129.zwzw
     texld r0, r0, s12
+
+    // linearize depth buffer from near to far plane
+    mov r20.xy, -c128.yy
+    add r20.x, r20.x, c128.x
+    mul r20.xy, r20.xy, c1.ww
+    mad r20.z, r0.x, r20.x, -r20.y
+    rcp r0.x, r20.z
+
     add r0.x, r0.x, -v3.y
     mul r0.x, r0.x, r0.x
     mul_sat r0.x, r0.x, c66.x

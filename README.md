@@ -335,6 +335,9 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Fixed disconnected directional shadows (thanks to Parallellines)
     - Improved directional shadows filtering (thanks to RaphaelK12)
 
+- gta_rmptfx_litsprite
+    - Added soft particles
+
 - gta_rmptfx_mesh
     - Reflection draw distance increased
     - Increased shadows sharpness

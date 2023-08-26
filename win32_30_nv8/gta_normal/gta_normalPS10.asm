@@ -69,9 +69,9 @@
     def c4, 0.212500006, 0.715399981, 0.0720999986, 0
     def c5, -0.25, 1, -1, -0.07
     def c6, 0.159154937, 0.5, 6.28318548, -3.14159274
-    def c7, 3, 7.13800001, 1.2, 4.8
+    def c7, 3, 7.13800001, 0.00012207031, 0.00048828125
     def c8, 0.75, -0.5, 0.5, 0
-    def c9, 0.25, 0.5, 0.75, 0.00048828125
+    def c9, 0.25, 0.5, 0.75, 4.8
     def c10, 0.5, 0.25, 0.125, 1
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
@@ -156,9 +156,9 @@
 
     add r21.z, r2.z, c5.w               // depth bias
 
-    mov r21.xy, c53.yy
-    max r21.xy, r21.xy, c9.ww           // prevents from too sharp shadows when using ShadowResFix
-    mul r21.xy, r21.xy, c7.zw           // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
+    mov r21.xy, c53.xy
+    max r21.xy, r21.xy, c7.zw           // prevents from too sharp shadows when using ShadowResFix
+    mul r21.xy, r21.xy, c9.ww           // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
     add r27.xyz, r2.x, -c9.xyz
     cmp r27.w, r27.x, c10.x, c10.w      // cascade 1-2

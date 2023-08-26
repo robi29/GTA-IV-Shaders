@@ -81,9 +81,8 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
 - gta_default
     - Reflection draw distance increased
     - Increased amount of lighting at very acute angles
-    - Increased shadows sharpness
     - Fixed disconnected directional shadows (thanks to Parallellines)
-    - Improved directional shadows filtering (thanks to RaphaelK12)
+    - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
 
 - gta_diffuse_instance
     - Increased shadows sharpness

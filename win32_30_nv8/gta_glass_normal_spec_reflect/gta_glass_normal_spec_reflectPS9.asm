@@ -235,7 +235,7 @@
     add r3.x, r2.z, -r6.x
     cmp r3.x, r3.x, c0.w, c0.x
     add r2.w, r2.w, r3.x
-    mad r0.zw, r7.xy, c6.xyxy, r0
+    mad r0.zw, r7.xyxy, c6.xyxy, r0
     texld r3, r0.zwzw, s15
     add r0.z, r2.z, -r3.x
     cmp r0.z, r0.z, c0.w, c0.x

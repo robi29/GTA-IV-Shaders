@@ -177,7 +177,7 @@
     mov r3.y, c53.y
     mul r9.xy, r3.yy, c98.xy
     add r2.z, r2.z, -c98.z
-    mad r3.zw, r9.xy, c12.xyxy, r2.xyxy
+    mad r3.zw, r9.xyxy, c12.xyxy, r2.xyxy
     texld r8, r3.zwzw, s15
     add r3.z, r2.z, -r8.x
     cmp r3.z, r3.z, c3.w, c3.z

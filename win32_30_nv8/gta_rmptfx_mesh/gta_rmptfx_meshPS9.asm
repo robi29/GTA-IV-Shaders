@@ -140,7 +140,7 @@
     mov r5.y, c53.y
     mul r7.xy, r5.yy, c98.xy
     add r2.z, r2.z, -c98.z
-    mad r3.zw, r7.xy, c2.xyyz, r2.xyxy
+    mad r3.zw, r7.xyxy, c2.xyyz, r2.xyxy
     texld r6, r3.zwzw, s15
     add r3.z, r2.z, -r6.x
     cmp r3.z, r3.z, -c0.y, -c0.z

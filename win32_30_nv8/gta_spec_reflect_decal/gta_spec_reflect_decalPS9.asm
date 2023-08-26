@@ -216,7 +216,7 @@
     add r3.x, r1.w, -r6.x
     cmp r3.x, r3.x, -c0.y, -c0.z
     add r2.w, r2.w, r3.x
-    mad r1.yz, r7.xy, c6.xzww, r1
+    mad r1.yz, r7.xxyy, c6.xzww, r1
     texld r3, r1.yzzw, s15
     add r1.y, r1.w, -r3.x
     cmp r1.y, r1.y, -c0.y, -c0.z

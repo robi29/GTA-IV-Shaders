@@ -239,7 +239,7 @@
     add r6.w, r6.z, -r7.x
     cmp r6.w, r6.w, -c2.y, -c2.z
     add r6.x, r6.x, r6.w
-    mad r1.zw, r8.xy, c3.xyxy, r1
+    mad r1.zw, r8.xyxy, c3.xyxy, r1
     texld r7, r1.zwzw, s15
     add r1.z, r6.z, -r7.x
     cmp r1.z, r1.z, -c2.y, -c2.z

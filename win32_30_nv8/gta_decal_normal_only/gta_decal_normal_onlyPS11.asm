@@ -180,7 +180,7 @@
     mov r6.y, c53.y
     mul r8.xy, r6.yy, c98.xy
     add r6.z, r6.z, -c98.z
-    mad r5.zw, r8.xy, r5, r5.xyxy
+    mad r5.zw, r8.xxxy, r5, r5.xyxy
     texld r7, r5.zwzw, s15
     add r5.z, r6.z, -r7.x
     cmp r5.z, r5.z, c6.w, c6.x

@@ -163,7 +163,7 @@
     mov r4.y, c53.y
     mul r7.xy, r4.yy, c98.xy
     add r4.z, r4.z, -c98.z
-    mad r2.zw, r7.xy, r2, r0
+    mad r2.zw, r7.xyxy, r2, r0
     texld r6, r2.zwzw, s15
     add r2.z, r4.z, -r6.x
     cmp r2.z, r2.z, c5.w, c5.x
@@ -217,7 +217,7 @@
     add r2.w, r4.z, -r6.x
     cmp r2.w, r2.w, c5.w, c5.x
     add r2.z, r2.z, r2.w
-    mad r0.zw, r7.xy, c2.xyxy, r0
+    mad r0.zw, r7.xyxy, c2.xyxy, r0
     texld r6, r0.zwzw, s15
     add r0.z, r4.z, -r6.x
     cmp r0.z, r0.z, c5.w, c5.x

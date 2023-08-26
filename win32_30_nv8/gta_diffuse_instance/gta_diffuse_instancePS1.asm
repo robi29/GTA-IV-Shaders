@@ -157,52 +157,52 @@
     texld r5, r4.xzzw, s15
     add r4.x, r3.z, -r5.x
     cmp r4.x, r4.x, c1.x, c1.y
-    mad r4.zw, r6.xy, c11, r3.xyxy
+    mad r4.zw, r6.xyxy, c11, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c10.xyxy, r3.xyxy
+    mad r4.zw, r6.xyxy, c10.xyxy, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c10, r3.xyxy
+    mad r4.zw, r6.xyxy, c10, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c9.xyxy, r3.xyxy
+    mad r4.zw, r6.xyxy, c9.xyxy, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c9, r3.xyxy
+    mad r4.zw, r6.xyxy, c9, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c8.xyxy, r3.xyxy
+    mad r4.zw, r6.xyxy, c8.xyxy, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c8, r3.xyxy
+    mad r4.zw, r6.xyxy, c8, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c7.xyxy, r3.xyxy
+    mad r4.zw, r6.xyxy, c7.xyxy, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c7, r3.xyxy
+    mad r4.zw, r6.xyxy, c7, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y
     add r4.x, r4.x, r4.z
-    mad r4.zw, r6.xy, c6.xyxy, r3.xyxy
+    mad r4.zw, r6.xyxy, c6.xyxy, r3.xyxy
     texld r5, r4.zwzw, s15
     add r4.z, r3.z, -r5.x
     cmp r4.z, r4.z, c1.x, c1.y

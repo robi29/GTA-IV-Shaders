@@ -155,7 +155,7 @@
     mov r5.y, c53.y
     mul r7.xy, r5.yy, c98.xy
     add r2.z, r2.z, -c98.z
-    mad r3.zw, r7.xy, r3, r2.xyxy
+    mad r3.zw, r7.xyxy, r3, r2.xyxy
     texld r5, r3.zwzw, s15
     add r3.z, r2.z, -r5.x
     cmp r3.z, r3.z, c5.w, c5.x

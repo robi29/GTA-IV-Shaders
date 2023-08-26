@@ -250,7 +250,7 @@
     add r5.w, r5.z, -r6.x
     cmp r5.w, r5.w, c2.x, c2.y
     add r5.x, r5.x, r5.w
-    mad r1.zw, r7.xy, c7, r1
+    mad r1.zw, r7.xyxy, c7, r1
     texld r6, r1.zwzw, s15
     add r1.z, r5.z, -r6.x
     cmp r1.z, r1.z, c2.x, c2.y

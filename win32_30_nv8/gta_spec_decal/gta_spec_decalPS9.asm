@@ -199,7 +199,7 @@
     add r4.x, r2.w, -r6.x
     cmp r4.x, r4.x, -c0.y, -c0.z
     add r3.w, r3.w, r4.x
-    mad r1.zw, r7.xy, c5.xyxy, r1
+    mad r1.zw, r7.xyxy, c5.xyxy, r1
     texld r4, r1.zwzw, s15
     add r1.z, r2.w, -r4.x
     cmp r1.z, r1.z, -c0.y, -c0.z

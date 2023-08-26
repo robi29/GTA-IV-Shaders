@@ -24,7 +24,7 @@
 
     ps_3_0
     def c0, 0.5, 0.212500006, 0.715399981, 0.0720999986
-    def c1, -1, 1, 0, 0.013333333
+    def c1, -1, 1, 0, 0
     dcl_color v0
     dcl_texcoord v1
     dcl_texcoord1 v2.zw
@@ -38,10 +38,9 @@
     texld r0, r0, s12
 
     // linearize depth buffer from near to far plane
-    mov r20.xy, -c128.yy
-    add r20.x, r20.x, c128.x
-    mul r20.xy, r20.xy, c1.ww
-    mad r20.z, r0.x, r20.x, -r20.y
+    mov r20.xy, c128.zz
+    add r20.y, r20.y, c128.w
+    mad r20.z, r0.x, -r20.x, r20.y
     rcp r0.x, r20.z
 
     add r0.x, r0.x, -v3.y

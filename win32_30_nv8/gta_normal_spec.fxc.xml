@@ -347,7 +347,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_normal_spec\gta_normal_specPS1.asm</File>
-				<Variables value="50" >
+				<Variables value="51" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -597,6 +597,11 @@
 						<Type>float</Type>
 						<Name>specularFactor</Name>
 						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
 					</Item>
 				</Variables>
 			</Item>
@@ -900,7 +905,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_normal_spec\gta_normal_specPS10.asm</File>
-				<Variables value="26" >
+				<Variables value="27" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -1031,12 +1036,17 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_normal_spec\gta_normal_specPS11.asm</File>
-				<Variables value="38" >
+				<Variables value="39" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -1227,12 +1237,17 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_normal_spec\gta_normal_specPS12.asm</File>
-				<Variables value="46" >
+				<Variables value="47" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -1462,6 +1477,11 @@
 						<Type>float</Type>
 						<Name>specularFactor</Name>
 						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScreenSize</Name>
+						<Index value="44" />
 					</Item>
 				</Variables>
 			</Item>

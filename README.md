@@ -380,6 +380,9 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
 - gta_terrain_va_4lyr
     - Increased amount of lighting at very acute angles
 
+- gta_trees
+    - Added leaves shadow swaying for FusionFix (thanks to Parallellines)
+
 - gta_vehicle_badges
     - Increased shadows sharpness
     - Increased amount of lighting at very acute angles

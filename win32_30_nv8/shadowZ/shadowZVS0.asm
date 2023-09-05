@@ -35,11 +35,11 @@
     add r0.xyz, r0, c3
     abs r0.w, c56.x
     sge r1.x, -r0.w, r0.w
+    mul r2.xyz, r0.y, c61
+    mad r2.xyz, r0.x, c60, r2
+    mad r2.xyz, r0.z, c62, r2
+    add r2.xyz, r2, c63
     if_ge -r0.w, r0.w // non-static objects
-      mul r1.yzw, r0.y, c61.xxyz
-      mad r1.yzw, r0.x, c60.xxyz, r1
-      mad r1.yzw, r0.z, c62.xxyz, r1
-      add r2.xyz, r1.yzww, c63
       add r0.w, r2.z, c59.z
       abs r1.y, c56.y
       sge r1.y, -r1.y, r1.y
@@ -55,13 +55,9 @@
       mul r3.w, r2.w, -c57.w
       mul r3.z, r1.y, -c57.w
     else
-      mov r2.x, c56.x
-      add r0.w, r2.x, c4.z
+      mov r3.x, c56.x
+      add r0.w, r3.x, c4.z
       if_ge -r0_abs.w, r0_abs.w // static
-        mul r1.yzw, r0.y, c61.xxyz
-        mad r1.yzw, r0.x, c60.xxyz, r1
-        mad r1.yzw, r0.z, c62.xxyz, r1
-        add r2.xyz, r1.yzww, c63
         mul r4.z, r2.z, c57.w
         mov r2.w, c4.w
         mov r4.xy, c57.z
@@ -74,21 +70,17 @@
         add r3.w, r0.w, c4.y
         max r3.z, r3.z, c5.x
       else // static
-        mul r1.yzw, r0.y, c61.xxyz
-        mad r1.yzw, r0.x, c60.xxyz, r1
-        mad r1.yzw, r0.z, c62.xxyz, r1
-        add r1.yzw, r1, c63.xxyz
         mov r3.z, c57.z
         add r3.z, r3.z, c4.x
-        mul r3.xy, r1.yzzw, r3.z
-        mov r3.w, -r1.w
+        mul r3.xy, r2, r3.z
+        mov r3.w, -r2.z
         mov r2.x, c57.x
         add r0.w, r2.x, -c59.w
         rcp r0.w, r0.w
         mul r1.y, r0.w, c59.w
         mul r1.z, r2.x, c59.w
         mul r0.w, r0.w, r1.z
-        mad r3.z, r1.w, r1.y, r0.w
+        mad r3.z, r2.z, r1.y, r0.w
       endif
     endif
     mov r1.y, c5.y

@@ -100,7 +100,6 @@
     texld r0, r0, s5
     mul r0.yzw, r2.xxyz, r4.xxyz
     add r1.x, r1.x, r1.x
-    mad_sat r1.y, r1.z, r1.z, c0.z
     mad r2.xyz, r1.x, r3, r0.yzww
     mov r2.w, c0.y
     mad r0.y, r0.x, c3.x, c3.y
@@ -109,6 +108,6 @@
     add r0.x, r0.x, c3.w
     cmp r0.x, r0.x, c0.x, c0.y
     mul r0, r2, r0.x
-    mul oC0, r1.y, r0
+    mul oC0, r1.z, r0
 
 // approximately 66 instruction slots used (5 texture, 61 arithmetic)

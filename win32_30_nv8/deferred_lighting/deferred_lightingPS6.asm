@@ -95,9 +95,8 @@
     mul r0.xyz, r0.w, r0
     mul r0.xyz, r4, r0
     add r0.w, r1.x, r1.x
-    mad_sat r1.x, r1.z, r1.z, c2.x
     mad r0.xyz, r0.w, r2, r0
     mov r0.w, c2.z
-    mul oC0, r1.x, r0
+    mul oC0, r1.z, r0
 
 // approximately 59 instruction slots used (4 texture, 55 arithmetic)

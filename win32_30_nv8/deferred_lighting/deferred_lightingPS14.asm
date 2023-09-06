@@ -152,7 +152,7 @@
     dp3_sat r0.y, r2, r4
     mul r2.xyz, r1, r0.x
     texld r3, r0.zwzw, s2
-    mul r3.yz, r3, r3
+    mul r3.y, r3, r3
     add r0.x, r3.x, r3.x
     mul r1.w, r3.y, c0.y
     pow r2.w, r0.y, r1.w
@@ -161,13 +161,11 @@
     texld r4, r0.zwzw, s0
     texld r0, r0.zwzw, s5
     mad r1.xyz, r4, r2, r1
-    mul r0.y, r3.z, r3.z
-    mad_sat r0.y, r0.y, c3.z, r3.z
     mad r0.z, r0.x, c6.z, c6.w
     cmp r0.z, r0.z, c7.x, c7.y
     mad r0.x, r0.x, c6.z, r0.z
     add r0.x, r0.x, c7.z
-    cmp r0.x, r0.x, c2.y, r0.y
+    cmp r0.x, r0.x, c2.y, r3.z
     mov r1.w, c7.w
     mul oC0, r1, r0.x
 

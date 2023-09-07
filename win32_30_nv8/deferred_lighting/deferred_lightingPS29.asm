@@ -40,7 +40,6 @@
     ps_3_0
     def c0, 0.50999999, 2, -0.999989986, 2.20000005
     def c1, 1.79999995, 0.5, 0, 1
-    def c2, 3, 0, 0, 0
     dcl_texcoord v0
     dcl vPos.xy
     dcl_2d s0
@@ -88,7 +87,7 @@
     mul r0.y, r0.y, r0.y
     mul r0.x, r0.x, r0.y
     mul r0.x, r0.x, c77.w
-    mul oC0.w, r0.x, c2.x
+    mul oC0.w, r0.x, c1.x
     mov oC0.xyz, c1.z
 
 // approximately 47 instruction slots used (4 texture, 43 arithmetic)

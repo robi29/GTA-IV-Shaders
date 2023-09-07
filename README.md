@@ -23,6 +23,7 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
     - Removed artificial lights dimming when dynamic shadows are casted
     - Dimmed shadow texture under vehicles for some artificial lights
+    - Fixed pitch black shadow texture under vehicles
 
 - gta_cubemap_reflect
     - Slightly increased shadows draw distance

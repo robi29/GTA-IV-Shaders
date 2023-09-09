@@ -25,7 +25,7 @@
 
     ps_3_0
     def c0, 3.99600005, 4, 0.125, 0.25
-    def c1, 0, -1, -0, 0
+    def c1, 0, -1, -0, 0.1
     dcl_texcoord v0.xy
     dcl_color v1
     dcl vPos.xy
@@ -48,8 +48,9 @@
     texkill r0
     texld r0, v0, s0
     mul r0, r0, v1
-    mov r1.x, c66.x
-    mul r1.x, r1.x, c45.w
+    mov r1.w, c45.w
+    max r1.w, r1.w, c1.w
+    mul r1.x, c66.x, r1.w
     mul r1.xyz, r0, r1.x
     mul r1.w, r0.w, c39.x
     mul oC0, r1, c51

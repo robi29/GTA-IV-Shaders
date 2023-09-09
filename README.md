@@ -106,6 +106,7 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Increased amount of lighting at very acute angles
     - Fixed disconnected directional shadows (thanks to Parallellines)
     - Improved directional shadows filtering (thanks to RaphaelK12)
+    - Fixed invisible lamp glass at day (thanks to Parallellines)
 
 - gta_emissivestrong
     - Reflection draw distance increased

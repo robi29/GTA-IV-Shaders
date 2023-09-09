@@ -547,7 +547,8 @@ Decompiled all GTA IV shaders and provided numerous fixes and improvements for t
     - Fixed shadow offset on water surface
     - Slightly increased shadows draw distance
     - Increased amount of lighting at very acute angles
-    - Corrected water transparency and texture tiling
+    - Corrected texture tiling
+    - Improved water transparency
     - Fixed disconnected directional shadows (thanks to Parallellines)
     - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
 

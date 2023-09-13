@@ -447,7 +447,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS1.asm</File>
-				<Variables value="48" >
+				<Variables value="49" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>SpecSampler</Name>
@@ -688,12 +688,17 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS2.asm</File>
-				<Variables value="3" >
+				<Variables value="4" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -709,52 +714,16 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS3.asm</File>
-				<Variables value="7" >
-					<Item>
-						<Type>sampler</Type>
-						<Name>SpecSampler</Name>
-						<Index value="1" />
-					</Item>
-					<Item>
-						<Type>sampler</Type>
-						<Name>TextureSampler</Name>
-						<Index value="0" />
-					</Item>
-					<Item>
-						<Type>float4</Type>
-						<Name>globalScalars</Name>
-						<Index value="39" />
-					</Item>
-					<Item>
-						<Type>float3</Type>
-						<Name>specMapIntMask</Name>
-						<Index value="73" />
-					</Item>
-					<Item>
-						<Type>float</Type>
-						<Name>specularColorFactor</Name>
-						<Index value="72" />
-					</Item>
-					<Item>
-						<Type>float</Type>
-						<Name>specularFactor</Name>
-						<Index value="66" />
-					</Item>
-					<Item>
-						<Type>float4</Type>
-						<Name>stencil</Name>
-						<Index value="52" />
-					</Item>
-				</Variables>
-			</Item>
-			<Item>
-				<DataType>asm</DataType>
-				<File>gta_spec\gta_specPS4.asm</File>
 				<Variables value="8" >
 					<Item>
 						<Type>sampler</Type>
@@ -763,6 +732,52 @@
 					</Item>
 					<Item>
 						<Type>sampler</Type>
+						<Name>TextureSampler</Name>
+						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>globalScalars</Name>
+						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float3</Type>
+						<Name>specMapIntMask</Name>
+						<Index value="73" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>specularColorFactor</Name>
+						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float</Type>
+						<Name>specularFactor</Name>
+						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>stencil</Name>
+						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
+			</Item>
+			<Item>
+				<DataType>asm</DataType>
+				<File>gta_spec\gta_specPS4.asm</File>
+				<Variables value="9" >
+					<Item>
+						<Type>sampler</Type>
+						<Name>SpecSampler</Name>
+						<Index value="1" />
+					</Item>
+					<Item>
+						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
 						<Index value="10" />
 					</Item>
@@ -795,6 +810,11 @@
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -904,7 +924,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS8.asm</File>
-				<Variables value="11" >
+				<Variables value="12" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -960,12 +980,17 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS9.asm</File>
-				<Variables value="24" >
+				<Variables value="25" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>SpecSampler</Name>
@@ -1086,12 +1111,17 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS10.asm</File>
-				<Variables value="36" >
+				<Variables value="37" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>SpecSampler</Name>
@@ -1272,12 +1302,17 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_spec\gta_specPS11.asm</File>
-				<Variables value="44" >
+				<Variables value="45" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>SpecSampler</Name>
@@ -1498,11 +1533,16 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -2093,6 +2133,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="10" >

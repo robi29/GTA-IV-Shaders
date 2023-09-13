@@ -232,7 +232,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_ped_reflect\gta_ped_reflectPS2.asm</File>
-				<Variables value="55" >
+				<Variables value="56" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -508,12 +508,17 @@
 						<Name>specularFactor</Name>
 						<Index value="73" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_ped_reflect\gta_ped_reflectPS3.asm</File>
-				<Variables value="31" >
+				<Variables value="32" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -669,12 +674,17 @@
 						<Name>specularFactor</Name>
 						<Index value="73" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_ped_reflect\gta_ped_reflectPS4.asm</File>
-				<Variables value="43" >
+				<Variables value="44" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -890,12 +900,17 @@
 						<Name>specularFactor</Name>
 						<Index value="73" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_ped_reflect\gta_ped_reflectPS5.asm</File>
-				<Variables value="14" >
+				<Variables value="15" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -966,11 +981,16 @@
 						<Name>stencil</Name>
 						<Index value="52" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1561,6 +1581,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="17" >

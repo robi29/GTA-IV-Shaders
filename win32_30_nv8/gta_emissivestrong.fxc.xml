@@ -407,7 +407,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS1.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -432,13 +432,18 @@
 						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS2.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -464,12 +469,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS3.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>TextureSampler</Name>
@@ -490,12 +500,17 @@
 						<Name>stencil</Name>
 						<Index value="52" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS4.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -520,6 +535,11 @@
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -624,7 +644,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS8.asm</File>
-				<Variables value="10" >
+				<Variables value="11" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -675,17 +695,28 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS9.asm</File>
-				<Variables />
+				<Variables value="1" >
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS10.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -710,13 +741,18 @@
 						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS11.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -742,12 +778,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_emissivestrong\gta_emissivestrongPS12.asm</File>
-				<Variables value="41" >
+				<Variables value="42" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -953,11 +994,16 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1548,6 +1594,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="9" >

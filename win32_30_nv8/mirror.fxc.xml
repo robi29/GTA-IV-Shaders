@@ -31,7 +31,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>mirror\mirrorPS1.asm</File>
-				<Variables value="3" >
+				<Variables value="4" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>ReflectTextureSampler</Name>
@@ -47,11 +47,16 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="47" >
+	<GlobalVariables value="48" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -522,6 +527,14 @@
 			0
 			0
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="4" >

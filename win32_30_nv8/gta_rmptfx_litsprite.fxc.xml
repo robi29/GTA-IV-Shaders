@@ -1042,7 +1042,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS1.asm</File>
-				<Variables value="2" >
+				<Variables value="3" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DiffuseTexSampler</Name>
@@ -1052,6 +1052,11 @@
 						<Type>float</Type>
 						<Name>HybridAdd</Name>
 						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -1094,7 +1099,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_rmptfx_litsprite\gta_rmptfx_litspritePS3.asm</File>
-				<Variables value="3" >
+				<Variables value="4" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DiffuseTexSampler</Name>
@@ -1109,6 +1114,11 @@
 						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -1155,7 +1165,7 @@
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="61" >
+	<GlobalVariables value="62" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1768,6 +1778,14 @@
 			AddressU Clamp
 			AddressV Clamp
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="20" >

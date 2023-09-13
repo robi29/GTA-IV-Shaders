@@ -457,7 +457,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS1.asm</File>
-				<Variables value="44" >
+				<Variables value="45" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -678,12 +678,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS2.asm</File>
-				<Variables value="3" >
+				<Variables value="4" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -698,13 +703,18 @@
 						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS3.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -724,13 +734,18 @@
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS4.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -750,6 +765,11 @@
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -849,7 +869,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS8.asm</File>
-				<Variables value="9" >
+				<Variables value="10" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -895,17 +915,28 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS9.asm</File>
-				<Variables />
+				<Variables value="1" >
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS10.asm</File>
-				<Variables value="20" >
+				<Variables value="21" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -1006,12 +1037,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS11.asm</File>
-				<Variables value="32" >
+				<Variables value="33" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -1172,12 +1208,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_wire\gta_wirePS12.asm</File>
-				<Variables value="40" >
+				<Variables value="41" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -1378,11 +1419,16 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1973,6 +2019,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="8" >

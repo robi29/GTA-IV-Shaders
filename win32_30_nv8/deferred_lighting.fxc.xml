@@ -874,7 +874,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS1.asm</File>
-				<Variables value="22" >
+				<Variables value="23" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -984,13 +984,18 @@
 						<Type>float4</Type>
 						<Name>globalScreenSize</Name>
 						<Index value="44" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS2.asm</File>
-				<Variables value="23" >
+				<Variables value="24" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1106,12 +1111,17 @@
 						<Name>globalScreenSize</Name>
 						<Index value="44" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS3.asm</File>
-				<Variables value="12" >
+				<Variables value="13" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -1172,12 +1182,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS4.asm</File>
-				<Variables value="13" >
+				<Variables value="14" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1243,17 +1258,28 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS5.asm</File>
-				<Variables />
+				<Variables value="1" >
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS6.asm</File>
-				<Variables value="13" >
+				<Variables value="14" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -1318,13 +1344,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS7.asm</File>
-				<Variables value="14" >
+				<Variables value="15" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1394,13 +1425,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS8.asm</File>
-				<Variables value="14" >
+				<Variables value="15" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1470,13 +1506,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS9.asm</File>
-				<Variables value="14" >
+				<Variables value="15" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1546,13 +1587,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS10.asm</File>
-				<Variables value="12" >
+				<Variables value="13" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -1612,13 +1658,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS11.asm</File>
-				<Variables value="13" >
+				<Variables value="14" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1683,13 +1734,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS12.asm</File>
-				<Variables value="13" >
+				<Variables value="14" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1755,23 +1811,33 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="77" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS13.asm</File>
-				<Variables value="1" >
+				<Variables value="2" >
 					<Item>
 						<Type>float4</Type>
 						<Name>debugLightColour</Name>
 						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS14.asm</File>
-				<Variables value="19" >
+				<Variables value="20" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferStencilTextureSampler</Name>
@@ -1867,12 +1933,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="84" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS15.asm</File>
-				<Variables value="17" >
+				<Variables value="18" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -1958,12 +2029,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="84" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS16.asm</File>
-				<Variables value="16" >
+				<Variables value="17" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -2044,12 +2120,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="79" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS17.asm</File>
-				<Variables value="21" >
+				<Variables value="22" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler0</Name>
@@ -2155,12 +2236,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="86" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS18.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2185,13 +2271,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS19.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2217,12 +2308,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="72" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS20.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2242,13 +2338,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS21.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2268,13 +2369,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS22.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2294,13 +2400,18 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="72" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS23.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2321,16 +2432,26 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="72" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS24.asm</File>
-				<Variables value="1" >
+				<Variables value="2" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>gDeferredLightSampler</Name>
 						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -2348,23 +2469,34 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS26.asm</File>
-				<Variables />
+				<Variables value="1" >
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS27.asm</File>
-				<Variables value="1" >
+				<Variables value="2" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>gDeferredLightSampler</Name>
 						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS28.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2390,12 +2522,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS29.asm</File>
-				<Variables value="13" >
+				<Variables value="14" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler1</Name>
@@ -2461,12 +2598,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="78" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS30.asm</File>
-				<Variables value="10" >
+				<Variables value="11" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler1</Name>
@@ -2516,6 +2658,11 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="75" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -2570,7 +2717,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS34.asm</File>
-				<Variables value="2" >
+				<Variables value="3" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>depthSourceSampler</Name>
@@ -2581,12 +2728,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS35.asm</File>
-				<Variables value="3" >
+				<Variables value="4" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2602,12 +2754,17 @@
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>deferred_lighting\deferred_lightingPS36.asm</File>
-				<Variables value="11" >
+				<Variables value="12" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>GBufferTextureSampler3</Name>
@@ -2662,6 +2819,11 @@
 						<Type>float4</Type>
 						<Name>gooDeferredLightScreenSize</Name>
 						<Index value="66" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -2737,7 +2899,7 @@
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -3328,6 +3490,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="41" >

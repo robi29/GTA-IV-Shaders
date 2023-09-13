@@ -133,7 +133,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>rmptfx_litsprite\rmptfx_litspritePS2.asm</File>
-				<Variables value="5" >
+				<Variables value="6" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DiffuseTexSampler</Name>
@@ -159,12 +159,17 @@
 						<Name>gHeatPhase</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>rmptfx_litsprite\rmptfx_litspritePS3.asm</File>
-				<Variables value="4" >
+				<Variables value="5" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DiffuseTexSampler</Name>
@@ -185,11 +190,16 @@
 						<Name>NormalMapTexSampler</Name>
 						<Index value="1" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="14" >
+	<GlobalVariables value="15" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -428,6 +438,14 @@
 			AddressU Clamp
 			AddressV Clamp
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="18" >

@@ -184,18 +184,23 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gpuptfx_simplerender\gpuptfx_simplerenderPS1.asm</File>
-				<Variables value="1" >
+				<Variables value="2" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DiffuseSampler</Name>
 						<Index value="0" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gpuptfx_simplerender\gpuptfx_simplerenderPS2.asm</File>
-				<Variables value="2" >
+				<Variables value="3" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DiffuseSampler</Name>
@@ -206,11 +211,16 @@
 						<Name>DiffuseSamplerPhase2</Name>
 						<Index value="1" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="13" >
+	<GlobalVariables value="14" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -435,6 +445,14 @@
 			1
 			1
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="11" >

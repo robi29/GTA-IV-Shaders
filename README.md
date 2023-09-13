@@ -2,6 +2,10 @@
 
 Decompiled all GTA IV shaders and provided numerous fixes and improvements for them. The changelog is [below](#Changelog).
 
+# Installation guide
+
+Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/releases), unpack the archive and copy fxc files to "Grand Theft Auto IV\common\shaders\win32_30_nv8" and "Grand Theft Auto IV\common\shaders\win32_30_atidx10".
+
 # Other interesting repositories
 
 1. Decompiled shaders by: https://github.com/d3g0n-byte/RAGE-Shader-Editor/releases

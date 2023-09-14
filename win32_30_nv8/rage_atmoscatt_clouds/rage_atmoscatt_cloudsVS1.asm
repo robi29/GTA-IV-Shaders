@@ -50,6 +50,7 @@
     dcl_position v0
     dcl_texcoord v1
     dcl_position o0
+    dcl_texcoord9 o10
     dcl_texcoord o1.xyz
     dcl_texcoord1 o2.xyz
     dcl_texcoord2 o3
@@ -125,6 +126,7 @@
     mad o1.z, r0.z, -r1.z, c5.x
     mul r1.z, r0.z, r1.z
     mov o0.z, r1.z
+	mov o10.z, r1.z
     mul_sat r1.y, r1.y, c68.x
     mad r1.x, r1.x, c5.y, c5.y
     add r1.y, -r1.y, c5.x
@@ -142,6 +144,11 @@
     rcp r0.z, r0.z
     mul r0.xyz, r0.z, r0.xyxw
     mad o0.xyw, r0.xyzz, c12.xyzz, c12.wzzy
+	mad o10.w, r0.xyzz, c12.xyzz, c12.wzzy
     mov o1.xy, v1
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 87 instruction slots used

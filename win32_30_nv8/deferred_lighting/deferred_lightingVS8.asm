@@ -54,6 +54,7 @@
     dcl_position v0
     dcl_2d s0
     dcl_position o0
+    dcl_texcoord9 o10
     dcl_texcoord o1
     dcl_texcoord1 o2.xyz
     dcl_texcoord2 o3.xyz
@@ -179,6 +180,11 @@
     mul r0.x, r0.x, c4.z
     mul o3.xyz, r0.x, c223
     mov o0, r1
+    mov o10.zw, r1
     mov o1.w, r1.w
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 154 instruction slots used (2 texture, 152 arithmetic)

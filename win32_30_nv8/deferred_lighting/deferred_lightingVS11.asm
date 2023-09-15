@@ -24,6 +24,7 @@
 //
 
     vs_3_0
+    def c127, 0.9999999, 1, 0, 0	// LogDepth constants
     def c0, 0.707106769, 1, 0.5, 0.100000001
     def c1, 1, 0, 2, -0.996999979
     def c2, 0.5, -0.5, 0.0833333358, 0.00999999978
@@ -33,6 +34,7 @@
     dcl_normal v3
     dcl_2d s0
     dcl_position o0
+	dcl_texcoord9 o10
     dcl_texcoord o1.xy
     dcl_texcoord1 o2.xyz
     mov r0.xyz, v3
@@ -75,6 +77,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r0.w, r1.z, r3.x
       mul r2.xy, r2.zwzw, c209
       mad r2.xy, r2, c1.z, r1
@@ -83,6 +102,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mul r1.w, r1.w, c2.z
       mad r0.w, r0.w, c2.z, r1.w
@@ -93,6 +129,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c211
@@ -102,6 +155,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c212
@@ -111,6 +181,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c213
@@ -120,6 +207,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c214
@@ -129,6 +233,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c215
@@ -138,6 +259,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c216
@@ -147,6 +285,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c217
@@ -156,6 +311,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c218
@@ -165,6 +337,23 @@
       mad r3.xy, r2, c2, c2.x
       mov r3.zw, c1.y
       texldl r3, r3, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r3.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r3.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r3, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.w, r1.z, r3.x
       mad r0.w, r1.w, c2.z, r0.w
       mul r2.xy, r2.zwzw, c219
@@ -174,6 +363,23 @@
       mad r2.xy, r1, c2, c2.x
       mov r2.zw, c1.y
       texldl r2, r2, s0
+	// ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+	if_ne r2.x, c127.y
+		rcp r20.x, c227.x
+		mul r20.x, r20.x, c227.y
+		pow r20.x, r20.x, r2.x
+		mul r20.x, r20.x, c227.x	// W_clip
+		
+		add r20.y, r20.x, -c227.x
+		add r20.z, c227.y, -c227.x
+		mul r20.y, r20.y, c227.y
+		mul r20.z, r20.z, r20.x
+		rcp r20.z, r20.z
+		mul r20.w, r20.y, r20.z		// Linear depth
+		
+		min r2, r20.w, c127.x		// FP error hack
+	endif
+	// ----------------------------------------------------------------------------------------------------------------------------------------------
       slt r1.x, r1.z, r2.x
       mad r4.w, r1.x, c2.z, r0.w
       slt r0.w, c2.w, r4.w
@@ -183,9 +389,14 @@
     mad r0, r4.x, c8, r0
     mad r0, r4.z, c10, r0
     add o0, r0, c11
+	add o10.zw, r0, c11
     mul r0.xyz, r4.w, v1
     mul o2.xyz, r0, v2.y
     mov o1.x, v2.x
     mov o1.y, v1.w
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 166 instruction slots used (24 texture, 142 arithmetic)

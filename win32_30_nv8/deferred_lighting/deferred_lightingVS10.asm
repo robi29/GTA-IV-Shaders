@@ -33,6 +33,7 @@
     def c0, -0.5, 0.25, 0, 0
     dcl_position v0
     dcl_position o0
+    dcl_texcoord9 o10
     dcl_texcoord o1
     dcl_texcoord1 o2.xyz
     dcl_texcoord2 o3.xyz
@@ -55,6 +56,11 @@
     mad r0, r0.z, c10, r1
     add r0, r0, c11
     mov o0, r0
+    mov o10.zw, r0
     mov o1.w, r0.w
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 20 instruction slots used

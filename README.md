@@ -652,6 +652,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
     - Ported changes from VisualIV
     - Remade bloom shader with proper resolution scaling
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Added FXAA
 
 - rmptfx_collision
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)

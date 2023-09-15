@@ -28,6 +28,7 @@
     dcl_color v1
     dcl_texcoord v2
     dcl_position o0
+    dcl_texcoord9 o10
     dcl_texcoord o1.xy
     dcl_color o2
     mad r0.xyz, v2.xyxw, c0.xxyw, c0.yyxw
@@ -42,8 +43,16 @@
     // zShift is 0 if r0.z < 55, otherwise zShift is linearly interpolated to hardcoded zShift value
     add r2.x, r0.z, c1.y
     mul_sat r2.x, r2.x, c1.x
-    mad o0.z, r2.x, -c210.x, r0.z
+    mad r2.x, r2.x, -c210.x, r0.z
+    mov o10.x, c210.x
+    mov o0.z, r2.x
+    mov o10.z, r2.x
     mov o0.w, r0.w
+    mov o10.w, r0.w
     mov o2, v1
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 12 instruction slots used

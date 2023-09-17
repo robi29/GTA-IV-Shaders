@@ -73,7 +73,7 @@
     def c13, 0.5, 0.25, 0.125, 1
 
     def c99, 0.5, 2, 0.25, -50
-    def c100, -15, 1, 0, 0.008
+    def c100, -15, 1, 0, 0.002
 
     defi i0, 31, 0, 0, 0
     defi i1, 31, 0, 0, 0
@@ -159,12 +159,12 @@
     endrep
 
     // avg if any blockers
-    //if_gt r10.z, c3.y
+    if_gt r10.z, c3.y
         rcp r10.z, r10.z
         mul r14.x, r14.x, r10.z
-    //else
-    //    mov r14.x, c3.y
-    //endif
+    else
+        mov r14.x, c3.y
+    endif
 
     add r14.x, r14.x, -r13.x // blocker - receiver
     //rcp r10.x, r14.x // 1 / blocker
@@ -181,12 +181,12 @@
 
     //add r14.x, r14.x, c99.z // add 0.25
 
-    mul r21.xy, c53.yy, r14.xx
+    mul r21.xy, c53.xy, r14.xx
 
     add r21.z, r1.z, c8.w               // depth bias
 
     //mov r21.xy, c53.xy
-    max r21.xy, r21.xy, c10.zw          // prevents from too sharp shadows when using ShadowResFix
+    //max r21.xy, r21.xy, c10.zw          // prevents from too sharp shadows when using ShadowResFix
     mul r21.xy, r21.xy, c12.ww          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
     add r27.xyz, r0.z, -c12.xyz

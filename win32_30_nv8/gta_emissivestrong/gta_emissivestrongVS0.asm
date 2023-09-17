@@ -25,12 +25,13 @@
 
     vs_3_0
     def c4, 9.99999975e-006, 1, 0, 0.5
-    def c5, 0.05, -55, 0, 0
+    def c5, 0.01, -64, 0, 0
     dcl_position v0
     dcl_color v1
     dcl_texcoord v2
     dcl_normal v3
     dcl_position o0
+    dcl_texcoord9 o10
     dcl_texcoord o1.xy
     dcl_texcoord1 o2
     dcl_color o3
@@ -55,13 +56,21 @@
     add r0, r0, c11
     mul r1.x, r0.w, c4.w
     mad o0.xy, c44.zwzw, r1.x, r0
-    // zShift is 0 if r0.z < 55, otherwise zShift is linearly interpolated to hardcoded zShift value
+    // zShift is 0 if r0.z < 64, otherwise zShift is linearly interpolated to hardcoded zShift value
     add r2.x, r0.z, c5.y
     mul_sat r2.x, r2.x, c5.x
-    mad o0.z, r2.x, -c210.x, r0.z 
+    mul o10.x, c210.x, r2.x
+    mad r2.x, r2.x, -c210.x, r0.z
+    mov o0.z, r2.x
+    mov o10.z, r2.x
     mov o0.w, r0.w
+    mov o10.w, r0.w
     mov o2.w, r0.w
     mov o3, v1
     mov o4.w, c4.y
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 25 instruction slots used

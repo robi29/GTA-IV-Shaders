@@ -46,7 +46,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>water\waterPS1.asm</File>
-				<Variables value="8" >
+				<Variables value="9" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DepthBufferSampler</Name>
@@ -87,12 +87,17 @@
 						<Name>waterReflectionScale</Name>
 						<Index value="73" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>water\waterPS2.asm</File>
-				<Variables value="24" >
+				<Variables value="25" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DepthBufferSampler</Name>
@@ -213,16 +218,27 @@
 						<Name>globalScreenSize</Name>
 						<Index value="44" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>water\waterPS3.asm</File>
-				<Variables />
+				<Variables value="1" >
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
+				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="58" >
+	<GlobalVariables value="59" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -805,6 +821,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="18" >

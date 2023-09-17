@@ -437,7 +437,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS1.asm</File>
-				<Variables value="6" >
+				<Variables value="7" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -467,13 +467,18 @@
 						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS2.asm</File>
-				<Variables value="6" >
+				<Variables value="7" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -504,12 +509,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS3.asm</File>
-				<Variables value="11" >
+				<Variables value="12" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -564,13 +574,18 @@
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS4.asm</File>
-				<Variables value="11" >
+				<Variables value="12" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -625,6 +640,11 @@
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -744,7 +764,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS8.asm</File>
-				<Variables value="13" >
+				<Variables value="14" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -810,12 +830,17 @@
 						<Name>specularFactor</Name>
 						<Index value="72" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS9.asm</File>
-				<Variables value="6" >
+				<Variables value="7" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -845,13 +870,18 @@
 						<Type>float4</Type>
 						<Name>globalScalars</Name>
 						<Index value="39" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS10.asm</File>
-				<Variables value="6" >
+				<Variables value="7" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>StippleTexture</Name>
@@ -882,12 +912,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_glass_emissivenight\gta_glass_emissivenightPS11.asm</File>
-				<Variables value="47" >
+				<Variables value="48" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -1123,11 +1158,16 @@
 						<Name>specularFactor</Name>
 						<Index value="66" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1718,6 +1758,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="16" >

@@ -130,7 +130,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_terrain_va_4lyr\gta_terrain_va_4lyrPS1.asm</File>
-				<Variables value="34" >
+				<Variables value="35" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>TextureSampler_layer0</Name>
@@ -301,12 +301,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_terrain_va_4lyr\gta_terrain_va_4lyrPS2.asm</File>
-				<Variables value="34" >
+				<Variables value="35" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>TextureSampler_layer1</Name>
@@ -477,12 +482,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_terrain_va_4lyr\gta_terrain_va_4lyrPS3.asm</File>
-				<Variables value="34" >
+				<Variables value="35" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>TextureSampler_layer2</Name>
@@ -653,12 +663,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_terrain_va_4lyr\gta_terrain_va_4lyrPS4.asm</File>
-				<Variables value="34" >
+				<Variables value="35" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>TextureSampler_layer3</Name>
@@ -829,12 +844,17 @@
 						<Name>globalScalars</Name>
 						<Index value="39" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_terrain_va_4lyr\gta_terrain_va_4lyrPS5.asm</File>
-				<Variables value="6" >
+				<Variables value="7" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>TextureSampler_layer0</Name>
@@ -865,11 +885,16 @@
 						<Name>stencil</Name>
 						<Index value="52" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="47" >
+	<GlobalVariables value="48" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1340,6 +1365,14 @@
 			0
 			0
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="6" >

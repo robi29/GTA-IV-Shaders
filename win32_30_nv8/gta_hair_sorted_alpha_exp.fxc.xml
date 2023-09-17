@@ -202,7 +202,7 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_hair_sorted_alpha_exp\gta_hair_sorted_alpha_expPS2.asm</File>
-				<Variables value="53" >
+				<Variables value="54" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -468,12 +468,17 @@
 						<Name>specularFactor</Name>
 						<Index value="72" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_hair_sorted_alpha_exp\gta_hair_sorted_alpha_expPS3.asm</File>
-				<Variables value="29" >
+				<Variables value="30" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -619,12 +624,17 @@
 						<Name>specularFactor</Name>
 						<Index value="72" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_hair_sorted_alpha_exp\gta_hair_sorted_alpha_expPS4.asm</File>
-				<Variables value="41" >
+				<Variables value="42" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -830,23 +840,33 @@
 						<Name>specularFactor</Name>
 						<Index value="72" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_hair_sorted_alpha_exp\gta_hair_sorted_alpha_expPS5.asm</File>
-				<Variables value="1" >
+				<Variables value="2" >
 					<Item>
 						<Type>float4</Type>
 						<Name>stencil</Name>
 						<Index value="52" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
 			<Item>
 				<DataType>asm</DataType>
 				<File>gta_hair_sorted_alpha_exp\gta_hair_sorted_alpha_expPS6.asm</File>
-				<Variables value="9" >
+				<Variables value="10" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>BumpSampler</Name>
@@ -892,11 +912,16 @@
 						<Name>stencil</Name>
 						<Index value="52" />
 					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
+					</Item>
 				</Variables>
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="59" >
+	<GlobalVariables value="60" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -1487,6 +1512,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="16" >

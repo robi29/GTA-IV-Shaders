@@ -35,6 +35,7 @@
     def c2, 9.99999975e-005, -2, 9.99999975e-006, 0.662
     dcl_position v0
     dcl_position o0
+    dcl_texcoord9 o10
     mov r0.xyz, c210
     mul r1.xyz, r0.yzxw, c211.zxyw
     mad r0.xyz, c211.yzxw, r0.zxyw, -r1
@@ -120,5 +121,10 @@
     mad r1, r0.x, c8, r1
     mad r0, r0.z, c10, r1
     add o0, r0, c11
+    add o10.zw, r0, c11
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 115 instruction slots used

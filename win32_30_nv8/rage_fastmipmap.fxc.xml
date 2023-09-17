@@ -68,11 +68,16 @@
 			<Item>
 				<DataType>asm</DataType>
 				<File>rage_fastmipmap\rage_fastmipmapPS4.asm</File>
-				<Variables value="1" >
+				<Variables value="2" >
 					<Item>
 						<Type>sampler</Type>
 						<Name>DepthTextureSampler0</Name>
 						<Index value="15" />
+					</Item>
+					<Item>
+						<Type>float4</Type>
+						<Name>NearFarPlane</Name>
+						<Index value="128" />
 					</Item>
 				</Variables>
 			</Item>
@@ -94,7 +99,7 @@
 			</Item>
 		</PixelShaders>
 	</Shaders>
-	<GlobalVariables value="19" >
+	<GlobalVariables value="20" >
 		<Item>
 			<Type>float4</Type>
 			<ArrayCount value="64" />
@@ -283,6 +288,14 @@
 			MinFilter Linear
 			MagFilter Linear
 			</Values>
+		</Item>
+		<Item>
+			<Type>float4</Type>
+			<ArrayCount value="0" />
+			<Name1>NearFarPlane</Name1>
+			<Name2>NearFarPlane</Name2>
+			<Annotation />
+			<Values />
 		</Item>
 	</GlobalVariables>
 	<LocalVariables value="7" >

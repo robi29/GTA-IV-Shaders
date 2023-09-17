@@ -21,6 +21,7 @@
     dcl_texcoord3 v5
     dcl_texcoord4 v6
     dcl_position o0
+    dcl_texcoord9 o10
     dcl_texcoord o1.xy
     dcl_color o2
     mov r0.xyz, v0
@@ -35,10 +36,15 @@
     mad r1, r0.y, c8, r1
     mad r0, r0.x, c10, r1
     add o0, r0, c11
+    add o10.zw, r0, c11
     mov o1.xy, v1
     mov o2.x, v3.w
     mov o2.y, v4.w
     mov o2.z, v5.w
     mov o2.w, v6.w
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 17 instruction slots used

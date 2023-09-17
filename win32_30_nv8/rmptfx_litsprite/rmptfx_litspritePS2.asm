@@ -22,12 +22,14 @@
 //
 
     ps_3_0
+    def c127, 0.9999999, 1, 0, 0 // LogDepth constants
     def c0, 1, 0.5, 0.159154937, 0
     def c1, 6.28318548, -3.14159274, 0, 0
     dcl_color v0
     dcl_texcoord v1.xy
     dcl_texcoord2 v2.zw
     dcl_texcoord3 v3.x
+    dcl_texcoord9 v9
     dcl_2d s0
     dcl_2d s1
     mov r0.z, v2.z
@@ -52,5 +54,19 @@
     add r2.y, c0.x, -v3.x
     mul r1.w, r0.w, r2.y
     cmp oC0, -r2.x, r0, r1
+    // ----------------------------------------------------------------- Linear2Log -----------------------------------------------------------------
+    if_ne v9.y, c127.y
+        rcp r20.z, c128.x
+        mul r20.x, v9.w, r20.z
+        mul r20.y, c128.y, r20.z
+        log r20.x, r20.x
+        log r20.y, r20.y
+        rcp r20.y, r20.y
+    else
+        mov r20.x, v9.z
+        rcp r20.y, v9.w
+    endif
+    mul oDepth, r20.x, r20.y
+    // ----------------------------------------------------------------------------------------------------------------------------------------------
 
 // approximately 29 instruction slots used (2 texture, 27 arithmetic)

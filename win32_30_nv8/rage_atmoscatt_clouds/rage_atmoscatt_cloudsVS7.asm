@@ -16,9 +16,15 @@
     vs_3_0
     dcl_position v0
     dcl_position o0
+    dcl_texcoord9 o10
     mul r0, c9, v0.y
     mad r0, v0.x, c8, r0
     mad r0, v0.z, c10, r0
     mad o0, v0.w, c11, r0
+    mad o10.zw, v0.w, c11, r0
+    mov r20.x, c8.w
+    add r20.x, r20.x, c9.w
+    add r20.x, r20.x, c10.w
+    add o10.y, r20.x, c11.w
 
 // approximately 4 instruction slots used

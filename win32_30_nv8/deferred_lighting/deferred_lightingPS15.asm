@@ -46,6 +46,7 @@
 //
 
     ps_3_0
+    def c127, 0.9999999, 1, 0, 0 // LogDepth constants
     def c0, 0.50999999, 2, -0.999989986, 9.99999975e-006
     def c1, 1, -0.333333343, 1.5, 0.100000001
     def c2, 1, 0, 0.5, -0.5
@@ -54,6 +55,7 @@
     def c5, -1, 1, 0.25, 0
     dcl_texcoord v0
     dcl vPos.xy
+    dcl_texcoord9 v9
     dcl_2d s0
     dcl_2d s1
     dcl_2d s2
@@ -63,6 +65,23 @@
     mul r10.z, r10.z, c2.z  // * 0.5
     mul r0.xy, r0, c84.zwzw
     texld r1, r0, s2
+    // ----------------------------------------------------------------- Log2Linear -----------------------------------------------------------------
+    if_ne r1.x, c127.y
+        rcp r20.x, c128.x
+        mul r20.x, r20.x, c128.y
+        pow r20.x, r20.x, r1.x
+        mul r20.x, r20.x, c128.x // W_clip
+        
+        add r20.y, r20.x, -c128.x
+        add r20.z, c128.y, -c128.x
+        mul r20.y, r20.y, c128.y
+        mul r20.z, r20.z, r20.x
+        rcp r20.z, r20.z
+        mul r20.w, r20.y, r20.z // Linear depth
+        
+        min r1, r20.w, c127.x // FP error hack
+    endif
+    // ----------------------------------------------------------------------------------------------------------------------------------------------
     mad r0.z, r1.x, c85.z, -c85.w
     mul r0.z, r0.z, v0.w
     rcp r0.z, r0.z
@@ -136,5 +155,19 @@
     mul r0.xyz, r0, r1.yzww
     cmp oC0.xyz, r1.x, r0, c2.y
     mov oC0.w, c1.x
+    // ----------------------------------------------------------------- Linear2Log -----------------------------------------------------------------
+    if_ne v9.y, c127.y
+        rcp r20.z, c128.x
+        mul r20.x, v9.w, r20.z
+        mul r20.y, c128.y, r20.z
+        log r20.x, r20.x
+        log r20.y, r20.y
+        rcp r20.y, r20.y
+    else
+        mov r20.x, v9.z
+        rcp r20.y, v9.w
+    endif
+    mul oDepth, r20.x, r20.y
+    // ----------------------------------------------------------------------------------------------------------------------------------------------
 
 // approximately 92 instruction slots used (7 texture, 85 arithmetic)

@@ -72,8 +72,8 @@
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
 
-    def c99, 0.5, 2, 0.25, -50
-    def c100, -15, 1, 0, 0.002
+    def c99, 0, 0, 1.0, -50
+    def c100, -15, 1, 0, 0.006
 
     defi i0, 31, 0, 0, 0
     defi i1, 31, 0, 0, 0
@@ -128,8 +128,8 @@
 
     mov r10.z, c3.y // blockers
 
-    mov r15.xy, c53.yy
-    mul r15.xy, r15.xy, c99.xy
+    //mov r15.xy, c53.yy
+    //mul r15.xy, r15.xy, c99.xy
 
     // center
     texld r10, r0.zw, s15
@@ -141,13 +141,13 @@
 
     rep i0
         rep i1
-            mad r11.xy, r15.xy, r31.xy, r0.zw
+            mad r11.xy, c53.xy, r31.xy, r0.zw
             texld r10, r11.xy, s15
             add r10.x, r10.x, -r1.z
 
             add r16.x, r10.x, -r13.x
 
-            if_gt r16.x, c99.w
+            if_ge r16.x, c99.w
                 add r14.x, r14.x, r10_abs.x
                 add r10.z, r10.z, c3.x
             endif
@@ -155,7 +155,7 @@
             add r31.x, r31.x, c100.y // j++
         endrep
         add r31.y, r31.y, c100.y // i++
-        mov r31.x, c100.x // j = -7
+        mov r31.x, c100.x // j = -15
     endrep
 
     // avg if any blockers
@@ -172,14 +172,14 @@
     //rcp r10.x, r13.x // 1 / receiver
     //mul r14.x, r14.x, r10.x // (blocker - receiver) / receiver
 
-    mul r14.x, r14.x, c100.w // * 0.008
+    mul r14.x, r14.x, c100.w // * 0.006
 
     //add r14.x, r14.x, -c99.y // -2
 
     max r14.x, r14.x, c3.y // > 0
     //min r14.x, r14.x, c6.x // < 10
 
-    //add r14.x, r14.x, c99.z // add 0.25
+    add r14.x, r14.x, c99.z // add 1.0
 
     mul r21.xy, c53.xy, r14.xx
 
@@ -187,7 +187,7 @@
 
     //mov r21.xy, c53.xy
     //max r21.xy, r21.xy, c10.zw          // prevents from too sharp shadows when using ShadowResFix
-    mul r21.xy, r21.xy, c12.ww          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
+    //mul r21.xy, r21.xy, c12.ww          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
     add r27.xyz, r0.z, -c12.xyz
     cmp r27.w, r27.x, c13.x, c13.w      // cascade 1-2

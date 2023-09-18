@@ -65,15 +65,15 @@
     def c5, 4, 0.75, 0.25, 5
     def c6, 10, 0, 0, 0
     def c7, 1, -1, 0, -0
-    def c8, -0.25, 1, -1, -0.07
+    def c8, -0.25, 1, -1, -0.1
     def c9, 0.159154937, 0.5, 6.28318548, -3.14159274
     def c10, 3, 7.13800001, 0.00012207031, 0.00048828125
     def c11, 0.75, -0.5, 0.5, 0
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
 
-    def c99, 0, 0, 1.0, -50
-    def c100, -15, 1, 0, 0.006
+    def c99, 0, 0, 2.0, 0
+    def c100, -15, 1, 0, 3
 
     defi i0, 31, 0, 0, 0
     defi i1, 31, 0, 0, 0
@@ -126,15 +126,9 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
-    mov r10.z, c3.y // blockers
-
-    //mov r15.xy, c53.yy
-    //mul r15.xy, r15.xy, c99.xy
-
     // center
-    texld r10, r0.zw, s15
-    mov r13.x, r10.x
-    add r13.x, r13.x, -r1.z // center shadow depth
+    texld r13, r0.zw, s15 // center shadow depth
+    mov r13.y, c3.y // blockers
 
     mov r31.xy, c100.xx // x - i1 loop index, y - i0 loop index
     mov r14.x, c100.z // sum
@@ -143,13 +137,13 @@
         rep i1
             mad r11.xy, c53.xy, r31.xy, r0.zw
             texld r10, r11.xy, s15
-            add r10.x, r10.x, -r1.z
 
             add r16.x, r10.x, -r13.x
 
             if_ge r16.x, c99.w
-                add r14.x, r14.x, r10_abs.x
-                add r10.z, r10.z, c3.x
+                add r10.x, r10.x, -r1.z
+                add r14.x, r14.x, r10.x
+                add r13.y, r13.y, c3.x
             endif
 
             add r31.x, r31.x, c100.y // j++
@@ -159,27 +153,25 @@
     endrep
 
     // avg if any blockers
-    if_gt r10.z, c3.y
-        rcp r10.z, r10.z
-        mul r14.x, r14.x, r10.z
+    if_gt r13.y, c3.y
+        rcp r13.y, r13.y
+        mul r14.x, r14.x, r13.y
     else
         mov r14.x, c3.y
     endif
 
-    add r14.x, r14.x, -r13.x // blocker - receiver
+    //add r14.x, r14.x, -r13.x // blocker - receiver
     //rcp r10.x, r14.x // 1 / blocker
     //mul r14.x, r14.x, r10.x // (blocker - receiver) / blocker
     //rcp r10.x, r13.x // 1 / receiver
     //mul r14.x, r14.x, r10.x // (blocker - receiver) / receiver
 
-    mul r14.x, r14.x, c100.w // * 0.006
-
-    //add r14.x, r14.x, -c99.y // -2
+    mul r14.x, r14.x, c100.w // * 3
 
     max r14.x, r14.x, c3.y // > 0
     //min r14.x, r14.x, c6.x // < 10
 
-    add r14.x, r14.x, c99.z // add 1.0
+    add r14.x, r14.x, c99.z // add 2.0
 
     mul r21.xy, c53.xy, r14.xx
 

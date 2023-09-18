@@ -72,8 +72,8 @@
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
 
-    def c99, 0, 0, 2.0, 0
-    def c100, -15, 1, 0, 3
+    def c99, 15, 1.7, 2.0, 0
+    def c100, -15, 1, 0, 0
 
     defi i0, 31, 0, 0, 0
     defi i1, 31, 0, 0, 0
@@ -156,22 +156,12 @@
     if_gt r13.y, c3.y
         rcp r13.y, r13.y
         mul r14.x, r14.x, r13.y
+        mad r14.x, r14.x, c99.y, c99.z // x * 2.0 + 2.0
+        max r14.x, r14.x, c3.y // > 0
+        min r14.x, r14.x, c99.x // < 15
     else
-        mov r14.x, c3.y
+        mov r14.x, c99.z
     endif
-
-    //add r14.x, r14.x, -r13.x // blocker - receiver
-    //rcp r10.x, r14.x // 1 / blocker
-    //mul r14.x, r14.x, r10.x // (blocker - receiver) / blocker
-    //rcp r10.x, r13.x // 1 / receiver
-    //mul r14.x, r14.x, r10.x // (blocker - receiver) / receiver
-
-    mul r14.x, r14.x, c100.w // * 3
-
-    max r14.x, r14.x, c3.y // > 0
-    //min r14.x, r14.x, c6.x // < 10
-
-    add r14.x, r14.x, c99.z // add 2.0
 
     mul r21.xy, c53.xy, r14.xx
 

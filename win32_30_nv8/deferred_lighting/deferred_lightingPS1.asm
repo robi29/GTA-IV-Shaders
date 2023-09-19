@@ -72,11 +72,17 @@
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
 
-    def c99, 30, 1.4, 2.0, 0
-    def c100, -31, 2, 0, 0
+    def c99, 38, 1.4, 2.0, 0.001
+    def c100, -38, 4, 0, 0
 
-    defi i0, 32, 0, 0, 0
-    defi i1, 32, 0, 0, 0
+    defi i0, 20, 0, 0, 0
+    defi i1, 20, 0, 0, 0
+
+    //def c99, 30, 1.4, 2.0, 0.001
+    //def c100, -31, 2, 0, 0
+
+    //defi i0, 32, 0, 0, 0
+    //defi i1, 32, 0, 0, 0
 
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
@@ -140,11 +146,21 @@
 
             add r16.x, r10.x, -r13.x
 
-            if_ge r16.x, c99.w
+            if_gt r16.x, c99.w
                 add r10.x, r10.x, -r1.z
                 add r14.x, r14.x, r10.x
                 add r13.y, r13.y, c3.x
             endif
+
+/*
+            //add r16.x, r10.x, -r13.x
+            add r10.x, r10.x, -r1.z
+
+            if_gt r10.x, c99.w
+                add r14.x, r14.x, r10.x
+                add r13.y, r13.y, c3.x
+            endif
+*/
 
             add r31.x, r31.x, c100.y // j++
         endrep
@@ -156,8 +172,8 @@
     if_gt r13.y, c3.y
         rcp r13.y, r13.y
         mul r14.x, r14.x, r13.y
-        mad r14.x, r14.x, c99.y, c99.z // x * 2.0 + 2.0
         max r14.x, r14.x, c3.y // > 0
+        mad r14.x, r14.x, c99.y, c99.z // x * 2.0 + 2.0
         min r14.x, r14.x, c99.x // < 15
     else
         mov r14.x, c99.z

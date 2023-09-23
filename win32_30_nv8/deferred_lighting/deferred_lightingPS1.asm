@@ -72,17 +72,11 @@
     def c12, 0.25, 0.5, 0.75, 4.8
     def c13, 0.5, 0.25, 0.125, 1
 
-    def c99, 38, 1.4, 2.0, 0.001
+    def c99, 38, 1.4, 2.0, 0.015
     def c100, -38, 4, 0, 0
 
     defi i0, 20, 0, 0, 0
     defi i1, 20, 0, 0, 0
-
-    //def c99, 30, 1.4, 2.0, 0.001
-    //def c100, -31, 2, 0, 0
-
-    //defi i0, 32, 0, 0, 0
-    //defi i1, 32, 0, 0, 0
 
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
@@ -132,56 +126,44 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
-    // center
-    texld r13, r0.zw, s15 // center shadow depth
     mov r13.y, c3.y // blockers
+
+    add r21.z, r1.z, c8.w               // depth bias
 
     mov r31.xy, c100.xx // x - i1 loop index, y - i0 loop index
     mov r14.x, c100.z // sum
 
     rep i0
+        mul r13.w, r31.y, c99.w
+
         rep i1
             mad r11.xy, c53.xy, r31.xy, r0.zw
             texld r10, r11.xy, s15
 
-            add r16.x, r10.x, -r13.x
+            add r11.x, r10.x, -r21.z
 
-            if_gt r16.x, c99.w
-                add r10.x, r10.x, -r1.z
-                add r14.x, r14.x, r10.x
+            if_gt r11.x, r13.w
+                min r11.x, r11.x, c99.x // < 38
+                add r14.x, r14.x, r11.x
                 add r13.y, r13.y, c3.x
             endif
-
-/*
-            //add r16.x, r10.x, -r13.x
-            add r10.x, r10.x, -r1.z
-
-            if_gt r10.x, c99.w
-                add r14.x, r14.x, r10.x
-                add r13.y, r13.y, c3.x
-            endif
-*/
 
             add r31.x, r31.x, c100.y // j++
         endrep
         add r31.y, r31.y, c100.y // i++
-        mov r31.x, c100.x // j = -15
+        mov r31.x, c100.x // j = -38
     endrep
 
     // avg if any blockers
     if_gt r13.y, c3.y
         rcp r13.y, r13.y
         mul r14.x, r14.x, r13.y
-        max r14.x, r14.x, c3.y // > 0
         mad r14.x, r14.x, c99.y, c99.z // x * 2.0 + 2.0
-        min r14.x, r14.x, c99.x // < 15
     else
         mov r14.x, c99.z
     endif
 
     mul r21.xy, c53.xy, r14.xx
-
-    add r21.z, r1.z, c8.w               // depth bias
 
     //mov r21.xy, c53.xy
     //max r21.xy, r21.xy, c10.zw          // prevents from too sharp shadows when using ShadowResFix

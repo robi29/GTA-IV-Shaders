@@ -75,11 +75,33 @@
     def c13, 0.25, 0.5, 0.75, 4.8
     def c16, 0.5, 0.25, 0.125, 1
 
+    // Optimized config
     def c99, 33, 1.4, 2.0, 0.015
     def c100, -33, 6, 0, 1
 
     defi i0, 12, 0, 0, 0
     defi i1, 12, 0, 0, 0
+
+    // RTX 3060Ti config
+    //def c99, 63, 1.4, 2.0, 0.015
+    //def c100, -63, 6, 0, 1
+
+    //defi i0, 22, 0, 0, 0
+    //defi i1, 22, 0, 0, 0
+
+    // RTX 3080 config
+    //def c99, 87, 1.4, 2.0, 0.015
+    //def c100, -87, 6, 0, 1
+
+    //defi i0, 30, 0, 0, 0
+    //defi i1, 30, 0, 0, 0
+
+    // RTX 4090 config
+    //def c99, 117, 1.4, 2.0, 0.015
+    //def c100, -117, 6, 0, 1
+
+    //defi i0, 40, 0, 0, 0
+    //defi i1, 40, 0, 0, 0
 
     dcl_texcoord v0.xy
     dcl_texcoord1 v1

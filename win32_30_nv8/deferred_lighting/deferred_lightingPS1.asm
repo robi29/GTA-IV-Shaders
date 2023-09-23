@@ -73,7 +73,7 @@
     def c13, 0.5, 0.25, 0.125, 1
 
     def c99, 38, 1.4, 2.0, 0.015
-    def c100, -38, 4, 0, 0
+    def c100, -38, 4, 0, 1
 
     defi i0, 20, 0, 0, 0
     defi i1, 20, 0, 0, 0
@@ -126,7 +126,7 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
-    mov r13.y, c3.y // blockers
+    mov r13.y, c100.z // blockers
 
     add r21.z, r1.z, c8.w               // depth bias
 
@@ -145,7 +145,7 @@
             if_gt r11.x, r13.w
                 min r11.x, r11.x, c99.x // < 38
                 add r14.x, r14.x, r11.x
-                add r13.y, r13.y, c3.x
+                add r13.y, r13.y, c100.w
             endif
 
             add r31.x, r31.x, c100.y // j++
@@ -155,7 +155,7 @@
     endrep
 
     // avg if any blockers
-    if_gt r13.y, c3.y
+    if_gt r13.y, c100.z
         rcp r13.y, r13.y
         mul r14.x, r14.x, r13.y
         mad r14.x, r14.x, c99.y, c99.z // x * 2.0 + 2.0

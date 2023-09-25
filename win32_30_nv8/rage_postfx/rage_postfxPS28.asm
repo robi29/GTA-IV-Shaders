@@ -65,7 +65,7 @@
     def c24, 0.25, 1.5, 4, 12
     def c25, 1, 0, -1, -2
     def c26, 0.298999995, 0.587000012, 0.114, 0
-    defi i0, 7, 0, 0, 0
+    defi i0, 28, 0, 0, 0
     dcl_texcoord v0.xy
     dcl_2d s0
     dcl_2d s1
@@ -520,20 +520,8 @@
     mad r0.z, r0.z, r0.z, -r1.w
     texld r7, v0, s0
     mov r7.yz, c2
-    mad r8, r7.w, -r7.y, c3
-    cmp r8, r8, c2.z, c2.w
-    mad r9, r7.w, -c6.x, c6.yzwx
-    cmp r9, r9, -c2.z, -c2.w
-    add r8, r8, r9
-    mul r8, r8, c4.x
-    dp4 r0.w, r8, c2.z
-    add r0.w, r0.w, c4.w
-    rcp r0.w, r0.w
-    mul r7.xyw, r3.xyzz, r8.x
-    mad r6.xyz, r6, c4.w, r7.xyww
-    mad r6.xyz, r4, r8.y, r6
-    mad r6.xyz, r5, r8.z, r6
-    mad r6.xyz, r2, r8.w, r6
+    rcp r0.w, c4.w
+    mul r6.xyz, r6, c4.w
     mul r6.xyz, r0.w, r6
     cmp r7.xyw, r0.z, c7.xyzz, c7.wxzw
     mul r3.xyz, r3, r7.y

@@ -57,7 +57,7 @@
     def c1, 0, 0.212500006, 0.715399981, 0.0720999986
     def c2, 0.25, 1, 256, 0
     def c3, 0, 2, 4, 8
-    def c4, 0, -0.5, 1.5, 0.5
+    def c4, -0.5, -1.5, 1.5, 0.5
     def c5, 2, -1, 0.125, 0
     def c6, 256, 2, 4, 8
     // NVIDIA FXAA 3.11 by Timothy Lottes
@@ -542,20 +542,8 @@
     cmp r0.x, r0.x, c2.y, r0.z
     texld r8, v0, s0
     mov r8.yz, c2
-    mad r9, r8.w, -r8.z, c3
-    cmp r9, r9, c2.y, c2.w
-    mad r10, r8.w, -c6.x, c6.yzwx
-    cmp r10, r10, -c2.y, -c2.w
-    add r9, r9, r10
-    mul r9, r9, c4.x
-    dp4 r0.z, r9, c2.y
-    add r0.z, r0.z, c4.w
-    rcp r0.z, r0.z
-    mul r8.xzw, r3.xyyz, r9.x
-    mad r7.xyz, r7, c4.w, r8.xzww
-    mad r7.xyz, r4, r9.y, r7
-    mad r7.xyz, r5, r9.z, r7
-    mad r7.xyz, r6, r9.w, r7
+    rcp r0.z, c4.w
+    mul r7.xyz, r7, c4.w
     mul r7.xyz, r0.z, r7
     add r0.z, -r0.x, c2.y
     mul r1.w, r0.x, c2.x

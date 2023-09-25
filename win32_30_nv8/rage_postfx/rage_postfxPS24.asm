@@ -57,13 +57,13 @@
 
     ps_3_0
     def c127, 0.9999999, 1, 0, 0 // LogDepth constants
-    def c0, 58.1640015, 47.1300011, 3.20000005, 1.79999995
+    def c0, 58.1640015, 47.1300011, 3.6, 0
     def c1, 0, 0.212500006, 0.715399981, 0.0720999986
     def c2, 0.25, 1, 256, 0
     def c3, 0, 2, 4, 8
     def c4, -0.5, -1.5, 1.5, 0.5
     def c5, 2, -1, 0.125, 0
-    def c6, 1.10000002, 0, 0, 0
+    def c6, 0, 0, 0, 0
     def c7, 256, 2, 4, 8
     // NVIDIA FXAA 3.11 by Timothy Lottes
     def c20, 0, 0, 0, 0       // Subpix           0.25, 0, 0, 0
@@ -601,13 +601,13 @@
     mad r0.xyz, r0.x, r4, r3
     cmp r0.xyz, r1.w, r3, r0
     cmp r0.xyz, -r0.w, r0, r1
-    mov r1.zw, c0
+    mul r1.zw, c44.xy, c44.ww
+    mul r1.zw, r1.zw, c0.zz
     mad r1.xy, v0, r1.zwzw, c85
     frc r1.xy, r1
     texld r1, r1, s3
-    add r0.w, r1.z, c4.x
-    mul r0.w, r0.w, c85.z
-    mad r0.xyz, r0.w, c6.x, r0
+    add r1.z, r1.z, c4.x
+    mad r0.xyz, r1.z, c85.z, r0
     texld r1, c1.x, s5
     rcp r0.w, r1.x
     mul r0.w, r0.w, c81.y

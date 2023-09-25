@@ -49,7 +49,7 @@
     def c1, 0, 0.212500006, 0.715399981, 0.0720999986
     def c2, 0, 2, 4, 8
     def c3, 0.25, 1, 256, 0
-    def c4, 3.20000005, 1.79999995, 1.10000002, 0
+    def c4, 3.6, 0, 0, 0
     def c5, 256, 2, 4, 8
     dcl_texcoord v0.xy
     dcl_2d s0
@@ -143,13 +143,13 @@
     mad r0.yzw, r4.xxyz, r0.x, r0
     mad r0.yzw, r5.xxyz, r0.x, r0
     mad r0.xyz, r1, r0.x, r0.yzww
-    mov r1.xy, c4
+    mul r1.xy, c44.xy, c44.ww
+    mul r1.xy, r1.xy, c4.xx
     mad r1.xy, v0, r1, c80
     frc r1.xy, r1
     texld r1, r1, s3
-    add r0.w, r1.z, c0.x
-    mul r0.w, r0.w, c80.z
-    mad r0.xyz, r0.w, c4.z, r0
+    add r1.z, r1.z, c0.x
+    mad r0.xyz, r1.z, c80.z, r0
     texld r1, v0, s4
     texld r2, c1.x, s5
     rcp r0.w, r2.x

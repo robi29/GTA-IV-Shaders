@@ -154,7 +154,7 @@
 
     mov r13.y, c100.z // blockers
 
-    add r21.z, r1.z, c9.w               // depth bias
+    add r21.z, r1.z, c9.w // depth bias
 
     mov r31.xy, c100.xx // x - i1 loop index, y - i0 loop index
     mov r14.x, c100.z // sum
@@ -169,7 +169,7 @@
             add r11.x, r10.x, -r21.z
 
             if_gt r11.x, r13.w
-                min r11.x, r11.x, c99.x // < 38
+                min r11.x, r11.x, c99.x // < 33
                 add r14.x, r14.x, r11.x
                 add r13.y, r13.y, c100.w
             endif
@@ -177,23 +177,19 @@
             add r31.x, r31.x, c100.y // j++
         endrep
         add r31.y, r31.y, c100.y // i++
-        mov r31.x, c100.x // j = -38
+        mov r31.x, c100.x // j = -33
     endrep
 
     // avg if any blockers
     if_gt r13.y, c100.z
         rcp r13.y, r13.y
         mul r14.x, r14.x, r13.y
-        mad r14.x, r14.x, c99.y, c99.z // x * 2.0 + 2.0
+        mad r14.x, r14.x, c99.y, c99.z // x * 1.4 + 2.0
     else
         mov r14.x, c99.z
     endif
 
     mul r21.xy, c53.xy, r14.xx
-
-    //mov r21.xy, c53.xy
-    //max r21.xy, r21.xy, c10.zw          // prevents from too sharp shadows when using ShadowResFix
-    //mul r21.xy, r21.xy, c12.ww          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
 
     add r27.xyz, r0.z, -c13.xyz
     cmp r27.w, r27.x, c16.x, c16.w      // cascade 1-2

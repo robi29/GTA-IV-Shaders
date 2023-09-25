@@ -29,6 +29,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
     - Dimmed shadow texture under vehicles for some artificial lights
     - Fixed pitch black shadow texture under vehicles
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Implemented percentage-closer soft shadows (PCSS)
 
 - gpuptfx_simplerender
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)

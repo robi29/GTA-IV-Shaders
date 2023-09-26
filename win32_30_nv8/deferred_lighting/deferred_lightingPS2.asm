@@ -68,12 +68,41 @@
     def c6, 0, 0.5, -0.5, 0.5
     def c7, 0.0199999996, 0.00999999978, 0.75, 0.25
     def c8, 5, 10, 0, 0
-    def c9, -0.25, 1, -1, -0.07
+    def c9, -0.25, 1, -1, -0.1
     def c10, 0.159154937, 0.5, 6.28318548, -3.14159274
     def c11, 3, 7.13800001, 0.00012207031, 0.00048828125
     def c12, 0.75, -0.5, 0.5, 0
     def c13, 0.25, 0.5, 0.75, 4.8
     def c16, 0.5, 0.25, 0.125, 1
+
+    // Optimized config
+    def c99, 33, 1.4, 2.0, 0.015
+    def c100, -33, 6, 0, 1
+
+    defi i0, 12, 0, 0, 0
+    defi i1, 12, 0, 0, 0
+
+    // RTX 3060Ti config
+    //def c99, 63, 1.4, 2.0, 0.015
+    //def c100, -63, 6, 0, 1
+
+    //defi i0, 22, 0, 0, 0
+    //defi i1, 22, 0, 0, 0
+
+    // RTX 3080 config
+    //def c99, 87, 1.4, 2.0, 0.015
+    //def c100, -87, 6, 0, 1
+
+    //defi i0, 30, 0, 0, 0
+    //defi i1, 30, 0, 0, 0
+
+    // RTX 4090 config
+    //def c99, 117, 1.4, 2.0, 0.015
+    //def c100, -117, 6, 0, 1
+
+    //defi i0, 40, 0, 0, 0
+    //defi i1, 40, 0, 0, 0
+
     dcl_texcoord v0.xy
     dcl_texcoord1 v1
     dcl_2d s0
@@ -123,11 +152,44 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
-    add r21.z, r1.z, c9.w               // depth bias
+    mov r13.y, c100.z // blockers
 
-    mov r21.xy, c53.xy
-    max r21.xy, r21.xy, c11.zw          // prevents from too sharp shadows when using ShadowResFix
-    mul r21.xy, r21.xy, c13.ww          // *2.4 instead of *3 because CSM resolutions are multiples of 256 instead of 320
+    add r21.z, r1.z, c9.w // depth bias
+
+    mov r31.xy, c100.xx // x - i1 loop index, y - i0 loop index
+    mov r14.x, c100.z // sum
+
+    rep i0
+        mul r13.w, r31.y, c99.w
+
+        rep i1
+            mad r11.xy, c53.xy, r31.xy, r0.zw
+            texld r10, r11.xy, s15
+
+            add r11.x, r10.x, -r21.z
+
+            if_gt r11.x, r13.w
+                min r11.x, r11.x, c99.x // < 33
+                add r14.x, r14.x, r11.x
+                add r13.y, r13.y, c100.w
+            endif
+
+            add r31.x, r31.x, c100.y // j++
+        endrep
+        add r31.y, r31.y, c100.y // i++
+        mov r31.x, c100.x // j = -33
+    endrep
+
+    // avg if any blockers
+    if_gt r13.y, c100.z
+        rcp r13.y, r13.y
+        mul r14.x, r14.x, r13.y
+        mad r14.x, r14.x, c99.y, c99.z // x * 1.4 + 2.0
+    else
+        mov r14.x, c99.z
+    endif
+
+    mul r21.xy, c53.xy, r14.xx
 
     add r27.xyz, r0.z, -c13.xyz
     cmp r27.w, r27.x, c16.x, c16.w      // cascade 1-2

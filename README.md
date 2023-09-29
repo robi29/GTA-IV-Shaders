@@ -453,14 +453,17 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
 - gta_terrain_va_2lyr
     - Increased amount of lighting at very acute angles
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Decreased reflection intensity
 
 - gta_terrain_va_3lyr
     - Increased amount of lighting at very acute angles
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Decreased reflection intensity
 
 - gta_terrain_va_4lyr
     - Increased amount of lighting at very acute angles
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Decreased reflection intensity
 
 - gta_trees
     - Added leaves shadow swaying for FusionFix (thanks to Parallellines)

@@ -21,7 +21,7 @@
 
     ps_3_0
     def c127, 0.9999999, 1, 0, 0 // LogDepth constants
-    def c0, 0.5, 0, 1, 0.25
+    def c0, 0.5, 0, 1, 0.1 // reflection intensity
     dcl_texcoord v0.xy
     dcl_texcoord3 v1.xy
     dcl_color v2

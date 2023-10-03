@@ -68,36 +68,37 @@
     def c6, 0, 0.5, -0.5, 0.5
     def c7, 0.0199999996, 0.00999999978, 0.75, 0.25
     def c8, 5, 10, 0, 0
-    def c9, -0.25, 1, -1, -0.1
+    def c9, -0.25, 1, -1, 1.5
     def c10, 0.159154937, 0.5, 6.28318548, -3.14159274
     def c11, 3, 7.13800001, 0.00012207031, 0.00048828125
     def c12, 0.75, -0.5, 0.5, 0
     def c13, 0.25, 0.5, 0.75, 4.8
-    def c16, 0.5, 0.25, 0.125, 1
+    def c16, 1, 0.5, 0.1, 0.18      // x,y = cascade 1,2 blur | z,w = cascade 1,2 bias
+    def c98, 0.21, 0.054, 0.39, 0.6 // x,y = cascade 3,4 blur | z,w = cascade 3,4 bias
 
     // Optimized config
-    def c99, 33, 1.4, 2.0, 0.015
+    def c99, 49, 1.4, 0, 0.045
     def c100, -33, 6, 0, 1
 
     defi i0, 12, 0, 0, 0
     defi i1, 12, 0, 0, 0
 
     // RTX 3060Ti config
-    //def c99, 63, 1.4, 2.0, 0.015
+    //def c99, 94, 1.4, 0, 0.045
     //def c100, -63, 6, 0, 1
 
     //defi i0, 22, 0, 0, 0
     //defi i1, 22, 0, 0, 0
 
     // RTX 3080 config
-    //def c99, 87, 1.4, 2.0, 0.015
+    //def c99, 130, 1.4, 0, 0.045
     //def c100, -87, 6, 0, 1
 
     //defi i0, 30, 0, 0, 0
     //defi i1, 30, 0, 0, 0
 
     // RTX 4090 config
-    //def c99, 117, 1.4, 2.0, 0.015
+    //def c99, 175, 1.4, 0, 0.045
     //def c100, -117, 6, 0, 1
 
     //defi i0, 40, 0, 0, 0
@@ -152,50 +153,67 @@
     add r1.xyz, r1, c63.xyww
     mad r0.zw, r1.xyxy, r2.xyxy, r3.xyxy
 
+    texld r16, v0, s1
+    mul r17.xyz, r16.w, c1
+    frc r17.xyz, r17
+    add r18.xyz, r17, r17
+    mad r18.xy, r17.yzzw, -c1.w, r18
+    mad r16.xyz, r16, c2.x, r18
+    add r16.xyz, r16, c2.y
+    nrm r17.xyz, r16
+
     mov r13.y, c100.z // blockers
 
-    add r21.z, r1.z, c9.w // depth bias
+    add r27.xyz, r0.z, -c13.xyz
+    cmp r28.xy, r27.x, c16.yw, c16.xz   // cascade 1-2
+    cmp r28.xy, r27.y, c98.xz, r28.xy   // cascade 2-3
+    cmp r28.xy, r27.z, c98.yw, r28.xy   // cascade 3-4
+    mul r21.xy, c53.xy, r28.x           // texel size multiplier
 
-    mov r31.xy, c100.xx // x - i1 loop index, y - i0 loop index
+    mul r20.xy, r28.xx, c100.xy // pcss texel step
+
+    if_ge r28.y, c98.w
+        dp3 r15.x, r17, -c17
+        mul_sat r15.x, r15.x, c9.w
+        mul r28.y, r28.y, r15.x
+    endif
+
+    add r21.z, r1.z, -r28.y // depth bias
+
+    mov r15.xy, r20.xx // x - i1 loop index, y - i0 loop index
     mov r14.x, c100.z // sum
 
     rep i0
-        mul r13.w, r31.y, c99.w
+        mul r13.w, r15.y, c99.w
 
         rep i1
-            mad r11.xy, c53.xy, r31.xy, r0.zw
+            mad r11.xy, c53.xy, r15.xy, r0.zw
             texld r10, r11.xy, s15
 
             add r11.x, r10.x, -r21.z
 
             if_gt r11.x, r13.w
-                min r11.x, r11.x, c99.x // < 33
+                min r11.x, r11.x, c99.x // < 49
                 add r14.x, r14.x, r11.x
                 add r13.y, r13.y, c100.w
             endif
 
-            add r31.x, r31.x, c100.y // j++
+            add r15.x, r15.x, r20.y // j++
         endrep
-        add r31.y, r31.y, c100.y // i++
-        mov r31.x, c100.x // j = -33
+        add r15.y, r15.y, r20.y // i++
+        mov r15.x, r20.x // j = -33
     endrep
 
     // avg if any blockers
     if_gt r13.y, c100.z
         rcp r13.y, r13.y
         mul r14.x, r14.x, r13.y
-        mad r14.x, r14.x, c99.y, c99.z // x * 1.4 + 2.0
+        mul r14.x, r14.x, c99.y // x * 1.4
     else
-        mov r14.x, c99.z
+        mov r14.x, c100.z
     endif
 
-    mul r21.xy, c53.xy, r14.xx
-
-    add r27.xyz, r0.z, -c13.xyz
-    cmp r27.w, r27.x, c16.x, c16.w      // cascade 1-2
-    cmp r27.w, r27.y, c16.y, r27.w      // cascade 2-3
-    cmp r27.w, r27.z, c16.z, r27.w      // cascade 3-4
-    mul r21.xy, r21.xy, r27.w           // texel size multiplier
+    mad r21.xy, r21.xy, r14.xx, c53.xy
 
     mov r22.xy, c11.xy
     mul r22.xy, r22.xy, c44.xy          // r2.xy * screen dimensions
@@ -236,27 +254,19 @@
     mad r0.y, r0.z, c5.w, r0.y
     add r0.z, r1.y, r0.y
     cmp_sat r0.y, r0.z, r0.y, r1.x
-    texld r1, v0, s1
-    mul r2.xyz, r1.w, c1
-    frc r2.xyz, r2
-    add r3.xyz, r2, r2
-    mad r3.xy, r2.yzzw, -c1.w, r3
-    mad r1.xyz, r1, c2.x, r3
-    add r1.xyz, r1, c2.y
-    nrm r2.xyz, r1
     mad r1.xyz, v1, -r0.x, c3.w
     mul r0.xzw, r0.x, v1.xyyz
     nrm r3.xyz, r1
-    dp3 r1.x, r3, r2
+    dp3 r1.x, r3, r17
     add r1.y, r1.x, r1.x
     add r1.x, -r1_abs.x, c3.z
     mul r1.x, r1.x, r1.x
     mul r1.x, r1.x, r1.x
     mad r1.x, r1.x, c7.z, c7.w
-    mad r1.yzw, r2.xxyz, -r1.y, r3.xxyz
+    mad r1.yzw, r17.xxyz, -r1.y, r3.xxyz
     dp3_sat r2.w, -c17, r1.yzww
     add r2.w, r2.w, c4.y
-    mul r3.w, r2.z, c2.w
+    mul r3.w, r17.z, c2.w
     mov_sat r3.w, r3.w
     mul r3.w, r3.w, c72.y
     texld r4, v0, s5
@@ -307,8 +317,8 @@
     mad r1.z, r3.w, -c3.y, c3.z
     max r2.w, r1.x, r1.y
     mul r0.xzw, r0, r2.w
-    dp3 r1.x, r2, -c17
-    mad_sat r1.y, r2.z, c6.z, c6.w
+    dp3 r1.x, r17, -c17
+    mad_sat r1.y, r17.z, c6.z, c6.w
     mov r2.xyz, c38
     mad r2.xyz, r2, r1.y, c37
     mul r2.xyz, r4.z, r2

@@ -23,7 +23,7 @@
 
     vs_3_0
     def c0, 1, 0, 0.5, 0
-    def c1, 0.01, -64, 0, 0
+    def c1, 0.01, -80, 0, 0.1
     dcl_position v0
     dcl_texcoord v1
     dcl_texcoord1 v3
@@ -51,9 +51,10 @@
     add r0, r0, c11
     mul r1.x, r0.w, c0.z
     mad o0.xy, c44.zwzw, r1.x, r0
-    // zShift is 0 if r0.z < 64, otherwise zShift is linearly interpolated to hardcoded zShift value
+    // zShift is 0.1 if r0.z < 80, otherwise zShift is linearly interpolated to hardcoded zShift value
     add r2.x, r0.z, c1.y
     mul_sat r2.x, r2.x, c1.x
+    add r2.x, r2.x, c1.w
     mul o10.x, c210.x, r2.x
     mad r2.x, r2.x, -c210.x, r0.z
     mov o0.z, r2.x

@@ -27,7 +27,7 @@
 
     vs_3_0
     def c0, 765.005859, 1, 0, -0.5
-    def c1, 2, -3, 0, -0.55
+    def c1, 2, -3, 0, -0.55 // z = headlight position offset for dynamic shadow
     dcl_position v0
     dcl_blendweight v1
     dcl_blendindices v2

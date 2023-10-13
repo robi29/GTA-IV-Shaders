@@ -31,6 +31,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
     - Implemented percentage-closer soft shadows (PCSS)
     - Improved shadows depth bias for 2nd and 3rd cascades (kudos to Parallellines)
+    - Fixed shadow banding occuring at soft PCSS
 
 - gpuptfx_simplerender
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)

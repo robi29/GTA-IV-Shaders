@@ -73,8 +73,8 @@
     def c11, 3, 7.13800001, 0.00012207031, 0.00048828125
     def c12, 0.875, -0.5, 0.5, 0
     def c13, 0.25, 0.5, 0.75, 4.8
-    def c16, 1, 0.5, 0.1, 0.18      // x,y = cascade 1,2 blur | z,w = cascade 1,2 bias
-    def c98, 0.21, 0.054, 0.39, 0.6 // x,y = cascade 3,4 blur | z,w = cascade 3,4 bias
+    def c16, 1, 0.5, 0.1, 0.18       // x,y = cascade 1,2 blur | z,w = cascade 1,2 bias
+    def c98, 0.21, 0.054, 0.39, 0.55 // x,y = cascade 3,4 blur | z,w = cascade 3,4 bias
     def c101, -0.375, 0.75, -0.75, 0
     def c102, 0.625, -0.25, 0.25, 0
 

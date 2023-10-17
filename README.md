@@ -661,6 +661,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
     - Added FXAA
     - Improved depth of field filter
     - Fixed aspect ratio of noise effect
+    - Improved FXAA when stipple filter is enabled (definition off)
 
 - rmptfx_collision
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)

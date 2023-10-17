@@ -53,7 +53,7 @@
     def c1, 0, 0.212500006, 0.715399981, 0.0720999986
     def c2, 0.25, 256, 1, 0
     def c3, 0, 2, 4, 8
-    def c4, -0.5, -1.5, 1.5, 0.5
+    def c4, 0, -1.5, 0.8, 0.5
     def c5, 2, -1, 0.125, 0
     def c6, 256, 2, 4, 8
     def c7, 0, 0.25, 0.5, 1
@@ -552,7 +552,7 @@
     mul r3.zw, r2.xyxy, c3.w
     mad r3.zw, v0.xyxy, c0.xyxy, r3
     texld r4, r3.zwzw, s4
-    add r1.w, r4.x, c4.x
+    add r1.w, r4.x, -c4.w
     mad r3.zw, r3.xyxy, r1.w, v0.xyxy
     mov r4.xyz, r2
     mov r1.w, c2.z

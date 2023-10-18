@@ -17,6 +17,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
 
 - cascadeConvert
     - Fixed the issue when improper shadow was drawn on water surface or some textures at particular camera angles (thanks to Parallellines)
+    - Removed improper blur before the shadowmap is sampled by lighting (kudos to Parallellines)
 
 - deferred_lighting
     - Slightly increased shadows draw distance

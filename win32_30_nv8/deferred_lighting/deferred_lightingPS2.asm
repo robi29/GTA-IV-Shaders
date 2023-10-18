@@ -67,14 +67,14 @@
     def c5, 1.5, -0.4548159977, 0.2077075065, 0.0625
     def c6, 0, 0.5, -0.5, 0.5
     def c7, 0.0199999996, 0.00999999978, 0.75, 0.25
-    def c8, 5, 10, 0, 0
-    def c9, -0.125, 1, -1, 1.5
+    def c8, 5, 10, 1.5, 0.4
+    def c9, -0.125, 1, -1, 0
     def c10, 0.159154937, 0.5, 6.28318548, -3.14159274
     def c11, 3, 7.13800001, 0.00012207031, 0.00048828125
     def c12, 0.875, -0.5, 0.5, 0
     def c13, 0.25, 0.5, 0.75, 4.8
-    def c16, 1, 0.5, 0.1, 0.18       // x,y = cascade 1,2 blur | z,w = cascade 1,2 bias
-    def c98, 0.21, 0.054, 0.39, 0.55 // x,y = cascade 3,4 blur | z,w = cascade 3,4 bias
+    def c16, 1, 0.5, 0.1, 0.16       // x,y = cascade 1,2 blur | z,w = cascade 1,2 bias
+    def c98, 0.21, 0.054, 0.39, 0.62 // x,y = cascade 3,4 blur | z,w = cascade 3,4 bias
     def c101, -0.375, 0.75, -0.75, 0
     def c102, 0.625, -0.25, 0.25, 0
 
@@ -174,9 +174,13 @@
 
     mul r20.xy, r28.xx, c100.xy // pcss texel step
 
-    if_ge r28.y, c98.w
+    if_ge r28.y, c98.z
         dp3 r15.x, r17, -c17
-        mul_sat r15.x, r15.x, c9.w
+        if_ge r28.y, c98.w
+            mul_sat r15.x, r15.x, c8.z
+        else
+            mad_sat r15.x, r15.x, c8.z, c8.w
+        endif
         mul r28.y, r28.y, r15.x
     endif
 

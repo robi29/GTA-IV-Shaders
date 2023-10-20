@@ -267,6 +267,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
     - Fixed disconnected directional shadows (thanks to Parallellines)
     - Ported directional shadows filtering from patch 1040 (thanks to Parallellines)
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Fixed too much specular on building windows and some terrains
 
 - gta_normal_spec_cubemap_reflect
     - Reflection draw distance increased
@@ -428,6 +429,7 @@ Download 7zip archive from [releases](https://github.com/robi29/GTA-IV-Shaders/r
     - Fixed disconnected directional shadows (thanks to Parallellines)
     - Improved directional shadows filtering (thanks to RaphaelK12)
     - Fixed z-fighting making depth buffer logarithmic, requires FusionFix ASI script (kudos to Parallellines)
+    - Fixed too much specular on building windows and some terrains
 
 - gta_spec_decal
     - Reflection draw distance increased
